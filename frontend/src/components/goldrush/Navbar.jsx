@@ -91,7 +91,7 @@ const Navbar = ({ isHome, onHome, onServiceClick, onAboutClick, onInsightsClick,
             onClick={onContactClick}
             className={`px-8 py-3 rounded-full font-bold transition-all duration-300 flex items-center gap-2 group shadow-sm text-[15px] ${ctaButtonClass}`}
           >
-            Contact us
+            Apply Now
             <ArrowRight size={16} className={`${(isHome || mobileMenuOpen) ? 'text-pink-500 group-hover:text-white' : 'text-pink-500'} transition-colors group-hover:translate-x-1 duration-300`} />
           </button>
         </div>
@@ -162,7 +162,7 @@ const Navbar = ({ isHome, onHome, onServiceClick, onAboutClick, onInsightsClick,
               onClick={() => handleMobileNav('', 'contact')}
               className="w-full bg-white text-navy-900 py-6 rounded-full font-extrabold text-xl flex items-center justify-center gap-4 active:scale-95 transition-transform shadow-xl"
             >
-              Contact us
+              Apply Now
               <ArrowRight size={24} className="text-pink-500" />
             </button>
           </div>

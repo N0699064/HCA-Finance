@@ -4,7 +4,7 @@ import { Linkedin, Twitter, Facebook } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="bg-navy-900 text-white pt-24 pb-12 border-t border-navy-800">
-      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
         {/* Brand */}
         <div>
           <div className="flex items-center gap-2 mb-4">
@@ -44,24 +44,9 @@ const Footer = () => {
           <h4 className="text-xl font-medium mb-6">Useful links</h4>
           <ul className="space-y-3 text-gray-400 text-sm">
             <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Privacy policy</span></li>
-            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Contact us</span></li>
+            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Apply Now</span></li>
             <li><a href="mailto:info@hcafinance.org" className="hover:text-pink-500 transition-colors">info@hcafinance.org</a></li>
           </ul>
-        </div>
-
-        {/* Badges/Certifications */}
-        <div className="flex flex-col items-center lg:items-end">
-          <div className="bg-white rounded-full p-4 w-24 h-24 flex items-center justify-center mb-4 border-4 border-yellow-400">
-            <div className="text-center">
-              <div className="text-navy-900 font-bold text-xs">FOUNDER</div>
-              <div className="text-navy-900 font-bold text-xl">100</div>
-            </div>
-          </div>
-          <div className="border border-white p-2 text-center text-xs">
-            <div className="font-bold text-lg">TECH</div>
-            <div>SOUTH WEST</div>
-            <div className="font-bold">+ MEMBER</div>
-          </div>
         </div>
       </div>
 

@@ -30,7 +30,7 @@ const AboutPage = ({ onBack, onContactClick }) => {
               onClick={onContactClick}
               className="bg-navy-900 text-white px-8 py-3.5 rounded-full font-bold hover:bg-pink-500 transition-all duration-300 flex items-center gap-2 group shadow-lg"
             >
-              Contact us
+              Apply Now
               <ArrowRight size={18} className="text-pink-500 group-hover:text-white transition-colors" />
             </button>
           </div>
