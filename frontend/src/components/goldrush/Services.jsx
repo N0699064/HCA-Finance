@@ -9,7 +9,7 @@ const Services = ({ onServiceClick }) => {
         {/* Sidebar Text (Desktop Only) */}
         <div className="hidden lg:flex flex-col items-center mr-16 pt-10">
           <div className="h-24 w-[1px] bg-pink-300 mb-4"></div>
-          <span className="vertical-text text-pink-500 font-bold tracking-[0.2em] text-sm uppercase">What we do</span>
+          <span className="vertical-text text-pink-500 font-bold tracking-[0.2em] text-sm uppercase">What we offer</span>
           <div className="h-full w-[1px] bg-gray-100 mt-4"></div>
         </div>
 
@@ -17,14 +17,14 @@ const Services = ({ onServiceClick }) => {
           {/* Mobile Eyebrow */}
           <div className="flex items-center gap-4 mb-4 lg:hidden">
             <div className="h-[1px] w-12 bg-pink-300"></div>
-            <span className="text-pink-500 font-bold tracking-[0.2em] text-xs uppercase">What we do</span>
+            <span className="text-pink-500 font-bold tracking-[0.2em] text-xs uppercase">What we offer</span>
           </div>
 
           <h2 className="text-4xl lg:text-5xl font-serif font-medium text-navy-900 mb-8">
-            Our Services
+            Funding Solutions
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mb-16 leading-relaxed">
-            The services we provide are unique to your business and your needs. We provide you with a cost-effective way to solve your marketing and technical challenges using our team of AI experts.
+            We offer a range of bank-backed financing products tailored to your business needs. From flexible credit lines to long-term SBA loans, our solutions are designed for sustainable growth with the lowest fees in the industry.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">

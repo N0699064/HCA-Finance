@@ -8,23 +8,23 @@ const AboutPage = ({ onBack, onContactClick }) => {
 
   return (
     <div className="pt-20">
-      {/* Meet the Team Hero Section */}
+      {/* Hero Section */}
       <section className="bg-[#F1F4F9] py-16 lg:py-24 relative overflow-hidden">
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
           <div>
             <div className="relative inline-block">
               <span className="absolute -top-10 -right-8 text-pink-500 font-serif italic text-xl transform -rotate-12 select-none animate-pulse">
-                *Award Winning
+                *Trusted Partner
                 <svg className="absolute -bottom-2 -left-4 w-6 h-6" viewBox="0 0 24 24" fill="none">
                   <path d="M4 12C4 12 10 12 14 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
               </span>
               <h1 className="text-5xl lg:text-8xl font-serif font-medium text-navy-900 leading-tight mb-8">
-                Meet the team
+                About HCA Finance
               </h1>
             </div>
             <p className="text-lg text-gray-600 mb-10 max-w-lg leading-relaxed">
-              We are specialists in AI-driven marketing and automation solutions, having worked across a multitude of industry sectors with a focus on gold-standard execution.
+              We are specialists in business capital funding, helping small and medium enterprises access affordable bank financing, SBA loans, and working capital solutions with integrity and transparency.
             </p>
             <button
               onClick={onContactClick}
@@ -57,26 +57,26 @@ const AboutPage = ({ onBack, onContactClick }) => {
         </div>
       </section>
 
-      {/* Industry Specialists Section */}
+      {/* Our Mission */}
       <section className="bg-white py-24 relative">
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl lg:text-6xl font-serif font-medium text-navy-900 mb-8">
-              Industry Specialists
+              Our Mission
             </h2>
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
               <p>
-                At HCA Finance, we are specialists in technology solutions. With deep roots in marketing automation and the latest AI architectures, we understand exactly how to navigate the toughest digital challenges.
+                At HCA Finance, we believe every business deserves access to honest, affordable capital. Too many small business owners are trapped in cycles of high-cost merchant cash advances and predatory lending — and we are here to change that.
               </p>
               <p>
-                With our team of like-minded technologists and global partners, HCA Finance can champion your technical success while you achieve your business goals. From building an innovative digital strategy to implementing dependable AI workflows, we can be the trusted technology partner for your business.
+                Our team of experienced funding specialists works directly with banks, SBA-approved lenders, and credit institutions to find the most competitive rates and terms for your business. We prioritize your long-term success over short-term profits.
               </p>
             </div>
           </div>
 
           <div className="relative">
             <div className="aspect-video bg-navy-900 rounded-3xl overflow-hidden relative shadow-2xl group cursor-pointer">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200" alt="Team Office" className="w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105" />
+              <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=1200" alt="Business Meeting" className="w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-20 h-20 bg-pink-500 rounded-full flex items-center justify-center text-white shadow-lg transform transition-transform group-hover:scale-110">
                   <Play size={32} fill="currentColor" />
@@ -90,42 +90,41 @@ const AboutPage = ({ onBack, onContactClick }) => {
         </div>
       </section>
 
-      {/* Industry Experts List */}
+      {/* Our Values */}
       <section className="bg-white py-24 border-t border-gray-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-4">
               <div className="h-[1px] w-12 bg-pink-300"></div>
-              <span className="text-pink-500 font-bold tracking-[0.2em] text-sm uppercase">Industry Experts</span>
+              <span className="text-pink-500 font-bold tracking-[0.2em] text-sm uppercase">Our Values</span>
               <div className="h-[1px] w-12 bg-pink-300"></div>
             </div>
             <h2 className="text-4xl lg:text-6xl font-serif font-medium text-navy-900">
-              Some of our industry experts
+              What sets us apart
             </h2>
           </div>
 
-          <div className="flex justify-center">
-            <div className="max-w-xs w-full text-center group">
-              <div className="relative mb-6 overflow-hidden rounded-2xl aspect-[4/5] bg-blue-500 flex items-end justify-center">
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-900/40 to-transparent"></div>
-                <div className="w-48 h-64 bg-white/20 rounded-t-full mb-[-20px] shadow-inner flex items-center justify-center">
-                  <Users size={80} className="text-white/40" />
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+            <div className="text-center group">
+              <div className="relative mb-6 w-20 h-20 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 transform transition-transform group-hover:scale-110">
+                <Users size={40} strokeWidth={1.5} />
               </div>
-              <h3 className="text-2xl font-serif font-bold text-navy-900 mb-1 group-hover:text-pink-500 transition-colors">Jeff Conrad</h3>
-              <p className="text-gray-500 font-medium">Founder & AI Strategist</p>
-              <div className="mt-4 flex justify-center">
-                <a
-                  href="https://www.linkedin.com/in/jeff-conrad-2b7b11195/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-navy-900 hover:text-pink-500 transition-colors"
-                >
-                  <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                  </svg>
-                </a>
+              <h3 className="text-xl font-serif font-bold text-navy-900 mb-2">Transparency First</h3>
+              <p className="text-gray-500">No hidden fees, no surprises. We show you every term before you sign.</p>
+            </div>
+            <div className="text-center group">
+              <div className="relative mb-6 w-20 h-20 mx-auto bg-pink-100 rounded-2xl flex items-center justify-center text-pink-500 transform transition-transform group-hover:scale-110">
+                <MessageSquare size={40} strokeWidth={1.5} />
               </div>
+              <h3 className="text-xl font-serif font-bold text-navy-900 mb-2">Dedicated Support</h3>
+              <p className="text-gray-500">A personal funding consultant guides you from application to funding.</p>
+            </div>
+            <div className="text-center group">
+              <div className="relative mb-6 w-20 h-20 mx-auto bg-green-100 rounded-2xl flex items-center justify-center text-green-600 transform transition-transform group-hover:scale-110">
+                <ArrowRight size={40} strokeWidth={1.5} />
+              </div>
+              <h3 className="text-xl font-serif font-bold text-navy-900 mb-2">Fast Processing</h3>
+              <p className="text-gray-500">Get approved in as little as 72 hours with the fastest processing in the industry.</p>
             </div>
           </div>
         </div>
@@ -147,15 +146,15 @@ const AboutPage = ({ onBack, onContactClick }) => {
 
           <div>
             <h2 className="text-4xl lg:text-5xl font-serif font-medium text-navy-900 mb-8">
-              Uniquely positioned to help you scale
+              Ready to grow your business?
             </h2>
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-              <p>Whether you need a dedicated AI partner or temporary strategic leadership, HCA Finance is here to guide your technology journey.</p>
+              <p>Whether you need working capital, equipment financing, or help restructuring existing debt, HCA Finance is here to provide the funding solutions your business deserves.</p>
               <button
                 onClick={onContactClick}
                 className="bg-navy-900 text-white px-8 py-3.5 rounded-full font-bold hover:bg-pink-500 transition-all duration-300 flex items-center gap-2 group shadow-lg"
               >
-                Contact us
+                Get started today
                 <ArrowRight size={18} className="text-pink-500 group-hover:text-white transition-colors" />
               </button>
             </div>

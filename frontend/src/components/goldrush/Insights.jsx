@@ -8,13 +8,13 @@ const Insights = ({ onInsightClick, onSeeMore }) => {
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-end mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-medium text-navy-900">
-            Insight
+            Success Stories
           </h2>
           <button
             onClick={onSeeMore}
             className="flex items-center gap-2 text-navy-900 font-bold hover:text-pink-500 transition-colors text-sm md:text-base mb-1"
           >
-            See more insight <ArrowRight size={16} className="text-pink-500" />
+            See all stories <ArrowRight size={16} className="text-pink-500" />
           </button>
         </div>
 

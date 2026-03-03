@@ -17,20 +17,20 @@ const Partners = () => {
           {/* Mobile Eyebrow */}
           <div className="flex items-center gap-4 mb-4 lg:hidden">
             <div className="h-[1px] w-12 bg-pink-300"></div>
-            <span className="text-pink-500 font-bold tracking-[0.2em] text-xs uppercase">Best in solutions</span>
+            <span className="text-pink-500 font-bold tracking-[0.2em] text-xs uppercase">Trusted partners</span>
           </div>
 
           <h2 className="text-4xl font-serif font-medium text-navy-900 mb-6">
-            Key Technology Partners
+            Trusted Lending Partners
           </h2>
           <p className="text-gray-600 mb-6 leading-relaxed">
-            HCA Finance partners with leading technology vendors to deliver state-of-the-art AI solutions that empower your business. Our partners excel in providing secure, scalable data storage and LLM inference integrated seamlessly with major cloud platforms.
+            HCA Finance works with a network of banks, credit unions, and government-backed lending institutions to deliver the most competitive rates and terms for your business.
           </p>
           <p className="text-gray-600 mb-6 leading-relaxed">
-            We also collaborate with experts in data management, offering services that include resilience, governance, and compliance, to streamline your operations.
+            Our partnerships with SBA-approved lenders, CDFI-certified institutions, and national banks give us access to financing options that most brokers simply cannot offer.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            Our commitment to innovation is showcased through our partnerships with pioneers in generative AI and modern marketing experiences.
+            We advocate for transparency and long-term success over quick profits — ensuring every funding solution we recommend is genuinely in your best interest.
           </p>
         </div>
 

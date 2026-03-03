@@ -13,14 +13,14 @@ const InsightsPage = ({ insights, onInsightClick, onBack }) => {
         <div className="container mx-auto px-6 relative z-10 text-center">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-[1px] w-12 bg-pink-300"></div>
-            <span className="text-pink-500 font-bold tracking-[0.2em] text-sm uppercase">Latest Thinking</span>
+            <span className="text-pink-500 font-bold tracking-[0.2em] text-sm uppercase">Real Results</span>
             <div className="h-[1px] w-12 bg-pink-300"></div>
           </div>
           <h1 className="text-5xl lg:text-8xl font-serif font-medium text-navy-900 leading-tight mb-8">
-            Insights
+            Success Stories
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Expert commentary, technology updates, and strategic advice from the forefront of the AI marketing revolution.
+            Real businesses, real results. See how HCA Finance has helped small and medium enterprises secure the capital they need to grow, stabilize, and thrive.
           </p>
         </div>
 

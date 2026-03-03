@@ -71,7 +71,7 @@ const InsightDetail = ({ data, onBack, onContactClick }) => {
                 onClick={onBack}
                 className="flex items-center gap-2 text-pink-500 font-bold hover:translate-x-[-4px] transition-transform"
               >
-                <ArrowRight size={20} className="rotate-180" /> Back to all insights
+                <ArrowRight size={20} className="rotate-180" /> Back to all stories
               </button>
 
               <div className="ml-auto flex gap-4">
@@ -88,13 +88,13 @@ const InsightDetail = ({ data, onBack, onContactClick }) => {
       <section className="bg-[#F1F4F9] py-20 mx-6 lg:mx-24 rounded-[40px] mb-24 overflow-hidden">
         <div className="container mx-auto px-12 text-center">
           <h2 className="text-3xl lg:text-4xl font-serif font-medium text-navy-900 mb-8">
-            Ready to apply these insights to your business?
+            Ready to write your own success story?
           </h2>
           <button
             onClick={onContactClick}
             className="bg-navy-900 text-white px-10 py-4 rounded-full font-bold hover:bg-pink-500 transition-all duration-300 inline-flex items-center gap-2 group shadow-lg"
           >
-            Talk to an expert
+            Talk to a funding specialist
             <ArrowRight size={20} className="text-pink-500 group-hover:text-white transition-colors" />
           </button>
         </div>

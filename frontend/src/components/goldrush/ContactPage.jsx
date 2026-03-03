@@ -47,7 +47,7 @@ const ContactPage = ({ onBack }) => {
               Get in touch
             </h2>
             <p className="text-lg text-gray-600 mb-12 max-w-2xl leading-relaxed">
-              If you would like to find out more about how we can solve your AI & Automation challenges, then please contact us using the form below for a no-obligation, confidential chat.
+              If you would like to find out more about how we can help fund your business growth, please contact us using the form below for a no-obligation, confidential consultation.
             </p>
 
             {submitted && (
@@ -167,6 +167,9 @@ const ContactPage = ({ onBack }) => {
                   </div>
                   <div>
                     <a href="tel:01174711341" className="text-lg font-medium text-navy-900 hover:text-pink-500 transition-colors">0117 471 1341</a>
+                    <div className="mt-2">
+                      <a href="mailto:info@hcafinance.org" className="text-lg font-medium text-navy-900 hover:text-pink-500 transition-colors">info@hcafinance.org</a>
+                    </div>
                   </div>
                 </div>
               </div>

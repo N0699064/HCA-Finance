@@ -64,24 +64,24 @@ const Navbar = ({ isHome, onHome, onServiceClick, onAboutClick, onInsightsClick,
         <div className="hidden lg:flex items-center space-x-12 font-medium">
           <div className="flex items-center space-x-10">
             <div className="group relative cursor-pointer flex items-center gap-1.5 hover:text-pink-500 transition-colors py-2 text-[15px] tracking-wide">
-              Services <ChevronDown size={14} className="text-pink-500 mt-0.5" />
+              Funding Solutions <ChevronDown size={14} className="text-pink-500 mt-0.5" />
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white text-navy-900 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 p-3">
-                <button onClick={() => onServiceClick('advisory')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">AI Strategy & Consulting</button>
-                <button onClick={() => onServiceClick('automation')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Intelligent Automation</button>
-                <button onClick={() => onServiceClick('chatbots')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Chatbot Engineering</button>
-                <button onClick={() => onServiceClick('marketing')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Data-Driven Marketing</button>
+                <button onClick={() => onServiceClick('lines-of-credit')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Lines of Credit</button>
+                <button onClick={() => onServiceClick('bank-term-loans')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Bank Term Loans</button>
+                <button onClick={() => onServiceClick('sba-loans')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">SBA Loans</button>
+                <button onClick={() => onServiceClick('equipment-financing')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Equipment Financing</button>
               </div>
             </div>
 
             <div className="group relative cursor-pointer flex items-center gap-1.5 hover:text-pink-500 transition-colors py-2 text-[15px] tracking-wide">
               Company <ChevronDown size={14} className="text-pink-500 mt-0.5" />
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white text-navy-900 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 p-3">
-                <button onClick={onAboutClick} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Meet the team</button>
+                <button onClick={onAboutClick} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">About us</button>
               </div>
             </div>
 
-            <button onClick={onInsightsClick} className="hover:text-pink-500 transition-colors text-[15px] tracking-wide py-2">Insight</button>
-            <span className="hover:text-pink-500 transition-colors text-[15px] tracking-wide py-2 cursor-pointer">Case studies</span>
+            <button onClick={onInsightsClick} className="hover:text-pink-500 transition-colors text-[15px] tracking-wide py-2">Success Stories</button>
+            <span className="hover:text-pink-500 transition-colors text-[15px] tracking-wide py-2 cursor-pointer">Apply Now</span>
           </div>
 
           <button
@@ -110,15 +110,15 @@ const Navbar = ({ isHome, onHome, onServiceClick, onAboutClick, onInsightsClick,
               onClick={() => toggleSection('services')}
               className="w-full py-6 flex justify-between items-center text-xl font-bold text-white hover:text-pink-500 transition-colors"
             >
-              Services
+              Funding Solutions
               {expandedSection === 'services' ? <ChevronUp size={24} className="text-pink-500" /> : <ChevronDown size={24} className="text-pink-500" />}
             </button>
             <div className={`overflow-hidden transition-all duration-300 ${expandedSection === 'services' ? 'max-h-[400px] mb-4' : 'max-h-0'}`}>
               <div className="bg-navy-800/50 rounded-2xl p-2 space-y-1">
-                <button onClick={() => handleMobileNav('advisory', 'service')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">AI Strategy & Consulting</button>
-                <button onClick={() => handleMobileNav('automation', 'service')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Intelligent Automation</button>
-                <button onClick={() => handleMobileNav('chatbots', 'service')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Chatbot Engineering</button>
-                <button onClick={() => handleMobileNav('marketing', 'service')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Data-Driven Marketing</button>
+                <button onClick={() => handleMobileNav('lines-of-credit', 'service')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Lines of Credit</button>
+                <button onClick={() => handleMobileNav('bank-term-loans', 'service')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Bank Term Loans</button>
+                <button onClick={() => handleMobileNav('sba-loans', 'service')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">SBA Loans</button>
+                <button onClick={() => handleMobileNav('equipment-financing', 'service')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Equipment Financing</button>
               </div>
             </div>
           </div>
@@ -133,7 +133,7 @@ const Navbar = ({ isHome, onHome, onServiceClick, onAboutClick, onInsightsClick,
             </button>
             <div className={`overflow-hidden transition-all duration-300 ${expandedSection === 'company' ? 'max-h-[300px] mb-4' : 'max-h-0'}`}>
               <div className="bg-navy-800/50 rounded-2xl p-2 space-y-1">
-                <button onClick={() => handleMobileNav('', 'about')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Meet the team</button>
+                <button onClick={() => handleMobileNav('', 'about')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">About us</button>
               </div>
             </div>
           </div>
@@ -142,11 +142,11 @@ const Navbar = ({ isHome, onHome, onServiceClick, onAboutClick, onInsightsClick,
             onClick={() => handleMobileNav('', 'insights')}
             className="w-full text-left py-6 text-xl font-bold text-white border-b border-navy-800 hover:text-pink-500 transition-colors"
           >
-            Insight
+            Success Stories
           </button>
 
           <span className="py-6 text-xl font-bold text-white border-b border-navy-800 hover:text-pink-500 transition-colors cursor-pointer block">
-            Case studies
+            Apply Now
           </span>
 
           <div className="pt-10">

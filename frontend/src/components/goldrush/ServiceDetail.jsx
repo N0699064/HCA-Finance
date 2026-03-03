@@ -178,7 +178,7 @@ const ServiceDetail = ({ data, onBack, onContactClick }) => {
       {/* Back Button */}
       <div className="container mx-auto px-6 mb-24">
         <button onClick={onBack} className="text-pink-500 font-bold flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-          <ArrowRight size={20} className="rotate-180" /> Back to all services
+          <ArrowRight size={20} className="rotate-180" /> Back to all solutions
         </button>
       </div>
     </div>

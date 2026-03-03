@@ -83,7 +83,7 @@ function App() {
 
       {currentView.type === "service" && (
         <ServiceDetail
-          data={serviceData[currentView.id] || serviceData["advisory"]}
+          data={serviceData[currentView.id] || serviceData["lines-of-credit"]}
           onBack={navigateHome}
           onContactClick={navigateToContact}
         />
@@ -91,7 +91,7 @@ function App() {
 
       {currentView.type === "insight" && (
         <InsightDetail
-          data={insightData[currentView.id] || insightData["marketing-automation"]}
+          data={insightData[currentView.id] || insightData["restaurant-expansion"]}
           onBack={navigateToInsightsList}
           onContactClick={navigateToContact}
         />

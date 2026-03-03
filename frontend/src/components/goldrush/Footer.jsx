@@ -11,7 +11,7 @@ const Footer = () => {
             <img src="/logohca-white.svg" alt="HCA Finance" className="h-10" />
           </div>
           <p className="text-gray-400 text-sm mb-6">
-            Technology solutions you can trust. Transforming businesses through intelligent automation.
+            Transparent capital funding solutions for small and medium businesses. Building financial stability through honest lending.
           </p>
           <div className="flex space-x-4">
             <a href="#" className="bg-navy-800 p-2 rounded-full hover:bg-pink-500 transition-colors">
@@ -28,12 +28,12 @@ const Footer = () => {
 
         {/* Services */}
         <div>
-          <h4 className="text-xl font-medium mb-6">Services</h4>
+          <h4 className="text-xl font-medium mb-6">Funding Solutions</h4>
           <ul className="space-y-3 text-gray-400 text-sm">
-            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Advisory & Consulting</span></li>
-            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Intelligent Automation</span></li>
-            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Chatbot Engineering</span></li>
-            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Data-Driven Marketing</span></li>
+            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Lines of Credit</span></li>
+            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Bank Term Loans</span></li>
+            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">SBA Loans</span></li>
+            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Equipment Financing</span></li>
           </ul>
         </div>
 
@@ -43,6 +43,7 @@ const Footer = () => {
           <ul className="space-y-3 text-gray-400 text-sm">
             <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Privacy policy</span></li>
             <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Contact us</span></li>
+            <li><a href="mailto:info@hcafinance.org" className="hover:text-pink-500 transition-colors">info@hcafinance.org</a></li>
           </ul>
         </div>
 
