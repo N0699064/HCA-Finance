@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, DollarSign, Landmark, TrendingUp } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = ({ onContactClick, onAboutClick }) => {
   return (
@@ -33,22 +33,40 @@ const Hero = ({ onContactClick, onAboutClick }) => {
           </div>
         </div>
 
-        {/* Right Illustration */}
-        <div className="relative hidden lg:block h-[500px]">
-          <div className="absolute top-0 right-10 bg-pink-200 w-64 h-64 rounded-3xl transform rotate-3 flex items-center justify-center shadow-2xl animate-float">
-            <DollarSign size={80} className="text-pink-600 opacity-80" strokeWidth={1.5} />
+        {/* Right Floating Image Cards — shifted right */}
+        <div className="relative hidden lg:block h-[500px] ml-12">
+          {/* Card 1 - Top right */}
+          <div className="absolute top-0 right-[-20px] w-64 h-64 rounded-3xl transform rotate-3 shadow-2xl animate-float overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1576267423048-15c0040fec78?auto=format&fit=crop&q=80&w=400&h=400"
+              alt="Happy business team celebrating"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-pink-500/30 to-transparent"></div>
           </div>
 
-          <div className="absolute bottom-10 right-32 bg-blue-100 w-64 h-64 rounded-3xl transform -rotate-3 flex items-center justify-center shadow-2xl animate-float-mid">
-            <Landmark size={80} className="text-navy-900 opacity-80" strokeWidth={1.5} />
+          {/* Card 2 - Bottom center */}
+          <div className="absolute bottom-10 right-8 w-64 h-64 rounded-3xl transform -rotate-3 shadow-2xl animate-float-mid overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1758599543110-f9cf3903a2ad?auto=format&fit=crop&q=80&w=400&h=400"
+              alt="Entrepreneurs celebrating success"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-500/30 to-transparent"></div>
           </div>
 
-          <div className="absolute top-40 right-64 bg-navy-800 w-64 h-64 rounded-3xl transform rotate-6 flex items-center justify-center shadow-2xl border border-navy-700 animate-float-slow">
-            <TrendingUp size={80} className="text-white opacity-80" strokeWidth={1.5} />
+          {/* Card 3 - Middle left */}
+          <div className="absolute top-36 left-0 w-64 h-64 rounded-3xl transform rotate-6 shadow-2xl border border-navy-700 animate-float-slow overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1758599543118-538bba233399?auto=format&fit=crop&q=80&w=400&h=400"
+              alt="Business owner celebrating growth"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-900/40 to-transparent"></div>
           </div>
 
           {/* Center Logo Circle */}
-          <div className="absolute top-1/2 right-48 transform -translate-y-1/2 translate-x-1/2 bg-white w-24 h-24 rounded-full flex items-center justify-center shadow-xl z-20">
+          <div className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 bg-white w-24 h-24 rounded-full flex items-center justify-center shadow-xl z-20">
             <span className="text-navy-900 font-serif font-bold text-3xl">HCA</span>
           </div>
         </div>
