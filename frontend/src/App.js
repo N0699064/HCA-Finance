@@ -12,6 +12,7 @@ import AboutPage from "./components/goldrush/AboutPage";
 import InsightDetail from "./components/goldrush/InsightDetail";
 import InsightsPage from "./components/goldrush/InsightsPage";
 import ContactPage from "./components/goldrush/ContactPage";
+import SBAEligibility from "./components/goldrush/SBAEligibility";
 import { serviceData, insightData } from "./data/mockData";
 
 function App() {
@@ -42,6 +43,11 @@ function App() {
     window.scrollTo(0, 0);
   };
 
+  const navigateToSbaEligibility = () => {
+    setCurrentView({ type: "sba-eligibility" });
+    window.scrollTo(0, 0);
+  };
+
   const navigateHome = () => {
     setCurrentView({ type: "home" });
     window.scrollTo(0, 0);
@@ -56,6 +62,7 @@ function App() {
         onAboutClick={navigateToAbout}
         onInsightsClick={navigateToInsightsList}
         onContactClick={navigateToContact}
+        onSbaEligibility={navigateToSbaEligibility}
       />
 
       {currentView.type === "home" && (
@@ -107,6 +114,13 @@ function App() {
 
       {currentView.type === "contact" && (
         <ContactPage onBack={navigateHome} />
+      )}
+
+      {currentView.type === "sba-eligibility" && (
+        <SBAEligibility
+          onBack={navigateHome}
+          onContactClick={navigateToContact}
+        />
       )}
 
       <Footer />

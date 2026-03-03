@@ -32,8 +32,10 @@ const Footer = () => {
           <ul className="space-y-3 text-gray-400 text-sm">
             <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Lines of Credit</span></li>
             <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Bank Term Loans</span></li>
+            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Debt Restructuring</span></li>
             <li><span className="hover:text-pink-500 transition-colors cursor-pointer">SBA Loans</span></li>
             <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Equipment Financing</span></li>
+            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Smarter MCA Solution</span></li>
           </ul>
         </div>
 

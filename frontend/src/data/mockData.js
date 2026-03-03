@@ -1,4 +1,4 @@
-import { CreditCard, Landmark, ShieldCheck, Wrench, DollarSign, TrendingUp, BarChart, Target, RefreshCw, Clock, FileText, Users, Briefcase, Building2, HandCoins, PiggyBank } from 'lucide-react';
+import { CreditCard, Landmark, ShieldCheck, Wrench, DollarSign, TrendingUp, BarChart, Target, RefreshCw, Clock, FileText, Users, Briefcase, Building2, HandCoins, PiggyBank, Layers, Zap } from 'lucide-react';
 
 export const services = [
   {
@@ -16,6 +16,13 @@ export const services = [
     color: 'bg-pink-100 text-pink-500',
   },
   {
+    id: 'debt-restructuring',
+    title: 'Debt Restructuring',
+    description: 'Consolidate multiple advances into one simple payment, lower your daily costs, and regain financial stability.',
+    icon: Layers,
+    color: 'bg-green-100 text-green-600',
+  },
+  {
     id: 'sba-loans',
     title: 'SBA Loans',
     description: 'Government-backed financing with extended terms and competitive rates for long-term business growth.',
@@ -28,6 +35,13 @@ export const services = [
     description: 'Acquire or replace essential tools and machinery with up to 100% financing tailored to your budget.',
     icon: Wrench,
     color: 'bg-purple-100 text-purple-600',
+  },
+  {
+    id: 'smarter-mca',
+    title: 'Smarter MCA Solution',
+    description: 'Replace daily MCA withdrawals with fixed monthly payments built for stability and SBA-ready financing.',
+    icon: Zap,
+    color: 'bg-amber-100 text-amber-600',
   },
 ];
 
@@ -106,6 +120,28 @@ export const serviceData = {
     uniqueDescription: 'We maintain deep relationships with a network of banks and lending institutions, allowing us to match your business with the most competitive rates and terms available in the market.',
     uniqueDescription2: 'Our team guides you through every step — from application to funding — ensuring a smooth, transparent process that puts your business goals first.'
   },
+  'debt-restructuring': {
+    id: 'debt-restructuring',
+    layout: 'process',
+    heroTitle: 'Debt Restructuring',
+    heroDescription: 'Consolidate your debt into one simple payment and free up your cash flow. Simplify your finances and regain control of your business.',
+    experienceTitle: 'Simplify, stabilize, and scale',
+    experienceDescription: 'If your business is juggling multiple MCA advances or high-cost loans, debt restructuring can consolidate everything into a single, manageable monthly payment. We work with lenders to negotiate better terms that dramatically improve your cash flow.',
+    experienceDescription2: 'With funds from $50,000 to $5,000,000+, including factoring and AR-based lines of credit, our restructuring facilities are designed to grow with your business — not hold it back.',
+    steps: [
+      { number: '01', title: 'Debt Assessment', description: 'We review all your existing obligations — MCAs, loans, and advances — to understand the full picture and identify the best path forward.' },
+      { number: '02', title: 'Consolidation Plan', description: 'Our team negotiates with creditors and structures a single, affordable payment plan that replaces your multiple daily or weekly withdrawals.' },
+      { number: '03', title: 'Financial Freedom', description: 'With simplified payments and improved cash flow, your business regains the stability needed to qualify for long-term bank financing.' }
+    ],
+    features: [
+      { title: 'Cash Flow Recovery', description: 'Lower your daily payment burden by up to 65%, freeing up capital for operations, hiring, and growth.', icon: TrendingUp },
+      { title: 'Single Payment Structure', description: 'Replace multiple daily or weekly MCA withdrawals with one predictable monthly payment you can plan around.', icon: FileText },
+      { title: 'Credit Improvement', description: 'Restructuring improves your business credit profile, building a pathway toward SBA and traditional bank financing.', icon: ShieldCheck }
+    ],
+    uniqueTitle: 'Break free from the MCA cycle',
+    uniqueDescription: 'Many business owners feel trapped by stacking MCA advances — each one making the next more expensive. Our restructuring programs are specifically designed to break this cycle and put you back on solid financial ground.',
+    uniqueDescription2: 'We don\'t just reduce your payments. We create a strategic roadmap from restructuring to bank-grade financing, ensuring your business moves from survival mode to sustainable growth.'
+  },
   'sba-loans': {
     id: 'sba-loans',
     layout: 'feature-rows',
@@ -144,6 +180,28 @@ export const serviceData = {
     uniqueTitle: 'Equipment as collateral',
     uniqueDescription: 'Unlike unsecured loans, equipment financing uses the asset itself as collateral — often resulting in better rates and higher approval chances, even for newer businesses.',
     uniqueDescription2: 'From heavy machinery to point-of-sale systems, we finance equipment across every industry. Our specialists match you with the right lender and structure to maximize your investment.'
+  },
+  'smarter-mca': {
+    id: 'smarter-mca',
+    layout: 'impact',
+    heroTitle: 'Smarter MCA Solution',
+    heroDescription: 'Replace daily MCA withdrawals with fixed monthly payments built for stability. Refinance expensive MCA debt into affordable, structured payments that rebuild your financial foundation.',
+    experienceTitle: 'From daily drain to monthly stability',
+    experienceDescription: 'Our Smarter MCA Solution is designed specifically for businesses trapped in expensive merchant cash advance cycles. We replace unpredictable daily withdrawals with fixed, affordable monthly payments — giving you back control of your cash flow.',
+    experienceDescription2: 'With up to $150,000 funded in as little as 72 hours, a minimum 640 credit score, and 12+ months in business, this program is the fastest path from MCA debt to SBA-ready financing.',
+    stats: [
+      { label: 'Funded In', value: '72hrs' },
+      { label: 'Up To', value: '$150K' },
+      { label: 'Min Credit', value: '640' }
+    ],
+    features: [
+      { title: 'Fixed Monthly Payments', description: 'No more unpredictable daily or weekly withdrawals. Our fixed monthly structure lets you plan your finances with certainty.', icon: FileText },
+      { title: 'SBA-Ready Path', description: 'Designed to improve your financial profile and build the foundation needed to qualify for long-term SBA financing.', icon: ShieldCheck },
+      { title: 'Fast Funding', description: 'Get up to $150,000 funded in as little as 72 hours — because when you are escaping MCA debt, speed matters.', icon: Clock }
+    ],
+    uniqueTitle: 'Your bridge to better financing',
+    uniqueDescription: 'Most businesses don\'t start with MCAs by choice — they turn to them out of necessity. The Smarter MCA Solution recognizes this reality and provides a dignified, strategic exit from high-cost advances.',
+    uniqueDescription2: 'We don\'t just refinance your debt. We create a clear pathway from your current MCA obligations to affordable bank financing and eventually to SBA loans — the gold standard of small business lending.'
   }
 };
 

@@ -27,7 +27,7 @@ const Services = ({ onServiceClick }) => {
             We offer a range of bank-backed financing products tailored to your business needs. From flexible credit lines to long-term SBA loans, our solutions are designed for sustainable growth with the lowest fees in the industry.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
