@@ -24,7 +24,7 @@ const Partners = () => {
             Key Technology Partners
           </h2>
           <p className="text-gray-600 mb-6 leading-relaxed">
-            GoldrushAi partners with leading technology vendors to deliver state-of-the-art AI solutions that empower your business. Our partners excel in providing secure, scalable data storage and LLM inference integrated seamlessly with major cloud platforms.
+            HCA Finance partners with leading technology vendors to deliver state-of-the-art AI solutions that empower your business. Our partners excel in providing secure, scalable data storage and LLM inference integrated seamlessly with major cloud platforms.
           </p>
           <p className="text-gray-600 mb-6 leading-relaxed">
             We also collaborate with experts in data management, offering services that include resilience, governance, and compliance, to streamline your operations.

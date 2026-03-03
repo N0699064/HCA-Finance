@@ -20,13 +20,13 @@ const About = ({ onAboutClick }) => {
           </div>
 
           <h2 className="text-4xl lg:text-5xl font-serif font-medium text-navy-900 mb-8">
-            About GoldrushAi
+            About HCA Finance
           </h2>
           <p className="text-gray-600 text-lg mb-8 leading-relaxed">
             We blend expert knowledge with a track record of innovative results to help your business cross the unchartered waters of AI adoption. From building a pioneering digital strategy through to implementing dependable automations, we can be the trusted technology partner for your business.
           </p>
           <p className="text-gray-600 text-lg mb-10 leading-relaxed">
-            We aren&apos;t just a consultancy. Instead, GoldrushAi can help you on your technology journey from start to finish, and beyond, through our unique proposition of Strategy, Execution, and Optimization.
+            We aren&apos;t just a consultancy. Instead, HCA Finance can help you on your technology journey from start to finish, and beyond, through our unique proposition of Strategy, Execution, and Optimization.
           </p>
 
           <button

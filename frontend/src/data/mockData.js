@@ -59,7 +59,7 @@ export const insights = [
   },
   {
     id: 'openai-partnership',
-    title: 'GoldrushAi becomes a certified OpenAI Enterprise Partner',
+    title: 'HCA Finance becomes a certified OpenAI Enterprise Partner',
     date: '4 September 2025',
     category: 'News',
     imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'
@@ -71,12 +71,12 @@ export const serviceData = {
     id: 'advisory',
     layout: 'standard',
     heroTitle: 'AI Strategy & Consulting',
-    heroDescription: 'Whether you need a sounding board for your ideas or some help to navigate your way through a technical challenge, GoldrushAi is here to help.',
+    heroDescription: 'Whether you need a sounding board for your ideas or some help to navigate your way through a technical challenge, HCA Finance is here to help.',
     experienceTitle: 'Decades of collective AI experience',
     experienceDescription: 'We have senior experts in all avenues of technology from infrastructure to business resilience, data, software development, technology risk and governance processes and more. Overall, our experience spans over 50 years, all of which was gained at market leaders.',
     experienceDescription2: 'We understand your technology issues as we have lived through them ourselves. Having worked in highly regulated and pressured environments, we have you covered for every eventuality.',
     features: [
-      { title: 'CTO as a Service', description: 'GoldrushAi can act as your CTO to review your technical plans, structure and give you advice about how you can make improvements.', icon: Users },
+      { title: 'CTO as a Service', description: 'HCA Finance can act as your CTO to review your technical plans, structure and give you advice about how you can make improvements.', icon: Users },
       { title: 'AI Readiness Audits', description: 'We help with cross-functional team engagement using real-world experience to ensure your AI adoption gets the focus it deserves.', icon: Shield },
       { title: 'Technology Strategy', description: 'Before updating any part of your technical landscape, get an expert to review your existing setup and roadmap.', icon: Search }
     ],
@@ -170,7 +170,7 @@ export const insightData = {
           body: "One-size-fits-all marketing is dead. AI allows you to segment your audience and serve hyper-personalized content at scale without manually crafting every interaction."
         }
       ],
-      conclusion: "Identifying these signs early can save your business thousands in lost revenue and wasted employee hours. GoldrushAi specializes in auditing these exact bottlenecks."
+      conclusion: "Identifying these signs early can save your business thousands in lost revenue and wasted employee hours. HCA Finance specializes in auditing these exact bottlenecks."
     }
   },
   'ai-ethics': {
@@ -191,7 +191,7 @@ export const insightData = {
           body: "Automated systems can inadvertently inherit human biases. We discuss how rigorous testing and diverse datasets are essential for creating equitable marketing tools."
         }
       ],
-      conclusion: "At GoldrushAi, we build with 'Ethics by Design', ensuring your brand remains both powerful and principled."
+      conclusion: "At HCA Finance, we build with 'Ethics by Design', ensuring your brand remains both powerful and principled."
     }
   },
   'conference-recap': {
@@ -217,12 +217,12 @@ export const insightData = {
   },
   'openai-partnership': {
     id: 'openai-partnership',
-    title: 'GoldrushAi becomes a certified OpenAI Enterprise Partner',
+    title: 'HCA Finance becomes a certified OpenAI Enterprise Partner',
     date: '4 September 2025',
     category: 'News',
     imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
     content: {
-      introduction: "We are thrilled to announce that GoldrushAi has officially joined the OpenAI Enterprise Partner Network, marking a significant milestone in our mission to deliver gold-standard AI solutions.",
+      introduction: "We are thrilled to announce that HCA Finance has officially joined the OpenAI Enterprise Partner Network, marking a significant milestone in our mission to deliver gold-standard AI solutions.",
       sections: [
         {
           heading: "What this means for our clients",
@@ -233,7 +233,7 @@ export const insightData = {
           body: "Our team has completed rigorous training and certification to ensure every implementation meets the highest standards of performance and safety set by OpenAI."
         }
       ],
-      conclusion: "This partnership cements GoldrushAi's position as a leader in the UK's burgeoning AI sector."
+      conclusion: "This partnership cements HCA Finance's position as a leader in the UK's burgeoning AI sector."
     }
   }
 };

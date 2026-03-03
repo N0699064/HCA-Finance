@@ -7,8 +7,8 @@ const Footer = () => {
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         {/* Brand */}
         <div>
-          <div className="text-3xl font-serif font-bold tracking-wider flex items-center gap-2 mb-4">
-            <span className="text-pink-500">✦</span> GoldrushAi
+          <div className="flex items-center gap-2 mb-4">
+            <img src="/logohca-white.svg" alt="HCA Finance" className="h-10" />
           </div>
           <p className="text-gray-400 text-sm mb-6">
             Technology solutions you can trust. Transforming businesses through intelligent automation.
@@ -63,8 +63,8 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-6 border-t border-navy-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-        <p>&copy; {new Date().getFullYear()} GoldrushAi Solutions. All rights reserved.</p>
-        <p className="mt-2 md:mt-0">Designed & Built by GoldrushAi Team</p>
+        <p>&copy; {new Date().getFullYear()} HCA Finance. All rights reserved.</p>
+        <p className="mt-2 md:mt-0">Designed & Built by HCA Finance Team</p>
       </div>
     </footer>
   );

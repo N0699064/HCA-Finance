@@ -66,10 +66,10 @@ const AboutPage = ({ onBack, onContactClick }) => {
             </h2>
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
               <p>
-                At GoldrushAi, we are specialists in technology solutions. With deep roots in marketing automation and the latest AI architectures, we understand exactly how to navigate the toughest digital challenges.
+                At HCA Finance, we are specialists in technology solutions. With deep roots in marketing automation and the latest AI architectures, we understand exactly how to navigate the toughest digital challenges.
               </p>
               <p>
-                With our team of like-minded technologists and global partners, GoldrushAi can champion your technical success while you achieve your business goals. From building an innovative digital strategy to implementing dependable AI workflows, we can be the trusted technology partner for your business.
+                With our team of like-minded technologists and global partners, HCA Finance can champion your technical success while you achieve your business goals. From building an innovative digital strategy to implementing dependable AI workflows, we can be the trusted technology partner for your business.
               </p>
             </div>
           </div>
@@ -83,7 +83,7 @@ const AboutPage = ({ onBack, onContactClick }) => {
                 </div>
               </div>
               <div className="absolute bottom-4 left-6 text-white font-medium">
-                Welcome to GoldrushAi
+                Welcome to HCA Finance
               </div>
             </div>
           </div>
@@ -150,7 +150,7 @@ const AboutPage = ({ onBack, onContactClick }) => {
               Uniquely positioned to help you scale
             </h2>
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-              <p>Whether you need a dedicated AI partner or temporary strategic leadership, GoldrushAi is here to guide your technology journey.</p>
+              <p>Whether you need a dedicated AI partner or temporary strategic leadership, HCA Finance is here to guide your technology journey.</p>
               <button
                 onClick={onContactClick}
                 className="bg-navy-900 text-white px-8 py-3.5 rounded-full font-bold hover:bg-pink-500 transition-all duration-300 flex items-center gap-2 group shadow-lg"

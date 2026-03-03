@@ -54,10 +54,10 @@ const Navbar = ({ isHome, onHome, onServiceClick, onAboutClick, onInsightsClick,
       <div className={`container mx-auto px-6 lg:px-12 flex justify-between items-center ${textColorClass}`}>
         {/* Logo */}
         <div
-          className={`text-2xl font-serif font-bold tracking-wider flex items-center gap-2 cursor-pointer z-[110] transition-colors ${logoColorClass}`}
+          className="flex items-center gap-2 cursor-pointer z-[110]"
           onClick={() => handleMobileNav('', 'home')}
         >
-          <span className="text-pink-500 text-3xl">✦</span> GoldrushAi
+          <img src={isHome || mobileMenuOpen ? "/logohca-white.svg" : "/logohca.svg"} alt="HCA Finance" className="h-10" />
         </div>
 
         {/* Desktop Menu */}

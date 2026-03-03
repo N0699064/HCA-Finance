@@ -12,7 +12,7 @@ const Hero = ({ onContactClick, onAboutClick }) => {
             <span className="font-bold">scale success</span>
           </h1>
           <p className="text-lg lg:text-xl text-gray-300 mb-10 leading-relaxed max-w-lg">
-            We are GoldrushAi. With cutting-edge artificial intelligence and automation strategies, we navigate your marketing challenges and deliver gold-standard results.
+            We are HCA Finance. With cutting-edge artificial intelligence and automation strategies, we navigate your marketing challenges and deliver gold-standard results.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -49,7 +49,7 @@ const Hero = ({ onContactClick, onAboutClick }) => {
 
           {/* Center Logo Circle */}
           <div className="absolute top-1/2 right-48 transform -translate-y-1/2 translate-x-1/2 bg-white w-24 h-24 rounded-full flex items-center justify-center shadow-xl z-20">
-            <span className="text-navy-900 font-serif font-bold text-3xl">GAi</span>
+            <span className="text-navy-900 font-serif font-bold text-3xl">HCA</span>
           </div>
         </div>
       </div>

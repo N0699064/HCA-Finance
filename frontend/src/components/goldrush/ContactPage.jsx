@@ -177,7 +177,7 @@ const ContactPage = ({ onBack }) => {
                     <Building2 size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-navy-900 mb-2">GoldrushAi Technologies</h4>
+                    <h4 className="font-bold text-navy-900 mb-2">HCA Finance Technologies</h4>
                     <p className="text-gray-600 leading-relaxed">
                       2530 The Quadrant<br />
                       Aztec West<br />
@@ -192,7 +192,7 @@ const ContactPage = ({ onBack }) => {
                     <Building2 size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-navy-900 mb-2">GoldrushAi Registered Office</h4>
+                    <h4 className="font-bold text-navy-900 mb-2">HCA Finance Registered Office</h4>
                     <p className="text-gray-600 leading-relaxed">
                       22 Over Ln<br />
                       Almondsbury<br />
