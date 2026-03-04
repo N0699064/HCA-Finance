@@ -106,8 +106,8 @@ const Navbar = ({ isHome, onHome, onServiceClick, onAboutClick, onInsightsClick,
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 bg-navy-900 z-[105] transition-transform duration-500 ease-in-out lg:hidden pt-28 px-8 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col space-y-2">
+      <div className={`fixed inset-0 bg-navy-900 z-[105] transition-transform duration-500 ease-in-out lg:hidden pt-20 px-8 overflow-y-auto ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex flex-col space-y-2 pb-32">
           <div className="border-b border-navy-800">
             <button
               onClick={() => toggleSection('services')}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Dark Royal Blue rounded square background -->
+  <rect x="10" y="10" width="180" height="180" rx="40" fill="#1F2651"/>
+  
+  <!-- White H letter -->
+  <g fill="white" font-family="Arial, sans-serif" font-size="140" font-weight="bold" text-anchor="middle" dominant-baseline="central">
+    <text x="100" y="110">H</text>
+  </g>
+</svg>

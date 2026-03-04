@@ -45,6 +45,7 @@ const Footer = () => {
           <ul className="space-y-3 text-gray-400 text-sm">
             <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Privacy policy</span></li>
             <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Apply Now</span></li>
+            <li><a href="tel:+13313332159" className="hover:text-pink-500 transition-colors">+1 331 333 2159</a></li>
             <li><a href="mailto:info@hcafinance.org" className="hover:text-pink-500 transition-colors">info@hcafinance.org</a></li>
           </ul>
         </div>

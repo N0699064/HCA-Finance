@@ -33,10 +33,59 @@ const ContactPage = ({ onBack }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const generateCalendarEvent = () => {
+    const eventDate = new Date();
+    eventDate.setDate(eventDate.getDate() + 1); // Schedule for next day
+    const startTime = new Date(eventDate.setHours(10, 0, 0, 0));
+    const endTime = new Date(startTime.getTime() + 30 * 60000); // 30 minutes duration
+
+    const formatDate = (date) => {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      const hours = String(date.getHours()).padStart(2, '0');
+      const minutes = String(date.getMinutes()).padStart(2, '0');
+      const seconds = String(date.getSeconds()).padStart(2, '0');
+      return `${year}${month}${day}T${hours}${minutes}${seconds}`;
+    };
+
+    const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//HCA Finance//Calendar Event//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:${Date.now()}@hcafinance.org
+DTSTAMP:${formatDate(new Date())}
+DTSTART:${formatDate(startTime)}
+DTEND:${formatDate(endTime)}
+SUMMARY:HCA Finance Funding Consultation - ${formData.firstName} ${formData.lastName}
+DESCRIPTION:Funding consultation with ${formData.companyName}\\nPhone: ${formData.phone}\\nEmail: ${formData.email}
+ORGANIZER:CN=HCA Finance;EMAIL=info@hcafinance.org
+ATTENDEE:CN=${formData.firstName} ${formData.lastName};EMAIL=${formData.email};RSVP=TRUE
+LOCATION:Virtual Meeting
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+
+    // Download calendar file for user
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/calendar;charset=utf-8,' + encodeURIComponent(icsContent));
+    element.setAttribute('download', `HCA_Finance_Consultation_${formData.firstName}_${formData.lastName}.ics`);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+
+    // Send calendar event to info@hcafinance.org via email
+    const mailtoLink = `mailto:info@hcafinance.org?subject=${encodeURIComponent(`New Funding Application - ${formData.firstName} ${formData.lastName}`)}&body=${encodeURIComponent(`New application received:\n\nName: ${formData.firstName} ${formData.lastName}\nCompany: ${formData.companyName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nFunding Amount: ${formData.fundingAmount || 'Not specified'}`)}`;
+    window.location.href = mailtoLink;
+  };
+
   const handleNext = () => {
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {
+      generateCalendarEvent();
       setSubmitted(true);
     }
   };
@@ -389,10 +438,9 @@ const ContactPage = ({ onBack }) => {
                     <Building2 size={22} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-navy-900 mb-1">HCA Finance Technologies</h4>
+                    <h4 className="font-bold text-navy-900 mb-1">HCA Finance </h4>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      1500 West Park Drive<br />
-                      Chicago, IL 60610<br />
+                      Florida<br />
                       United States
                     </p>
                   </div>
@@ -405,8 +453,6 @@ const ContactPage = ({ onBack }) => {
                   <div>
                     <h4 className="font-bold text-navy-900 mb-1">HCA Finance Registered Office</h4>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      2250 North Ridgetop Road<br />
-                      New York, NY 10013<br />
                       United States
                     </p>
                   </div>
