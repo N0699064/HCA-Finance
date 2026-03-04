@@ -8,8 +8,7 @@ const Hero = ({ onContactClick, onAboutClick }) => {
         {/* Left Content */}
         <div className="max-w-2xl">
           <h1 className="text-5xl lg:text-7xl font-serif font-medium leading-tight mb-6">
-            Capital funding that <br />
-            <span className="font-bold">fuels growth</span>
+            Capital funding that <span className="font-bold">fuels growth</span>
           </h1>
           <p className="text-lg lg:text-xl text-gray-300 mb-10 leading-relaxed max-w-lg">
             We are HCA Finance. With smart bank financing and transparent funding solutions, we help small and medium businesses access the capital they need to scale with confidence.
@@ -38,8 +37,8 @@ const Hero = ({ onContactClick, onAboutClick }) => {
           {/* Card 1 - Top right */}
           <div className="absolute top-0 right-[-20px] w-64 h-64 rounded-3xl transform rotate-3 shadow-2xl animate-float overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1576267423048-15c0040fec78?auto=format&fit=crop&q=80&w=400&h=400"
-              alt="Happy business team celebrating"
+              src="/sba funding.jpg"
+              alt="Business professionals discussing funding"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-pink-500/30 to-transparent"></div>
@@ -48,8 +47,8 @@ const Hero = ({ onContactClick, onAboutClick }) => {
           {/* Card 2 - Bottom center */}
           <div className="absolute bottom-10 right-8 w-64 h-64 rounded-3xl transform -rotate-3 shadow-2xl animate-float-mid overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1758599543110-f9cf3903a2ad?auto=format&fit=crop&q=80&w=400&h=400"
-              alt="Entrepreneurs celebrating success"
+              src="/budget-concept-financial-planning-corporate.jpg"
+              alt="People reviewing financial documents and capital"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-blue-500/30 to-transparent"></div>
@@ -58,14 +57,12 @@ const Hero = ({ onContactClick, onAboutClick }) => {
           {/* Card 3 - Middle left */}
           <div className="absolute top-36 left-0 w-64 h-64 rounded-3xl transform rotate-6 shadow-2xl border border-navy-700 animate-float-slow overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1758599543118-538bba233399?auto=format&fit=crop&q=80&w=400&h=400"
-              alt="Business owner celebrating growth"
+              src="/mca-retail.jpg"
+              alt="Entrepreneurs celebrating successful capital funding"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-900/40 to-transparent"></div>
           </div>
-
-          {/* Center Logo Circle */}
           <div className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 bg-white w-24 h-24 rounded-full flex items-center justify-center shadow-xl z-20">
             <span className="text-navy-900 font-serif font-bold text-3xl">HCA</span>
           </div>
@@ -74,7 +71,7 @@ const Hero = ({ onContactClick, onAboutClick }) => {
 
       {/* Wave Divider at Bottom */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
-        <svg className="relative block w-full h-[100px] lg:h-[150px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <svg className="relative block w-full h-[100px] lg:h-[150px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ display: 'block', marginBottom: '-1px' }}>
           <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-white"></path>
         </svg>
       </div>

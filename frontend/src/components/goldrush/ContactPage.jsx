@@ -367,7 +367,7 @@ const ContactPage = ({ onBack }) => {
                     </div>
                     <div>
                       <p className="text-sm text-gray-500 font-medium mb-1">Call us</p>
-                      <a href="tel:01174711341" className="text-lg font-medium text-navy-900 hover:text-pink-500 transition-colors">0117 471 1341</a>
+                      <a href="tel:+13313332159" className="text-lg font-medium text-navy-900 hover:text-pink-500 transition-colors">+1 331 333 2159</a>
                     </div>
                   </div>
 
@@ -391,10 +391,9 @@ const ContactPage = ({ onBack }) => {
                   <div>
                     <h4 className="font-bold text-navy-900 mb-1">HCA Finance Technologies</h4>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      2530 The Quadrant<br />
-                      Aztec West<br />
-                      Bristol<br />
-                      BS32 4AW
+                      1500 West Park Drive<br />
+                      Chicago, IL 60610<br />
+                      United States
                     </p>
                   </div>
                 </div>
@@ -406,10 +405,9 @@ const ContactPage = ({ onBack }) => {
                   <div>
                     <h4 className="font-bold text-navy-900 mb-1">HCA Finance Registered Office</h4>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      22 Over Ln<br />
-                      Almondsbury<br />
-                      Bristol<br />
-                      BS32 4BP
+                      2250 North Ridgetop Road<br />
+                      New York, NY 10013<br />
+                      United States
                     </p>
                   </div>
                 </div>
