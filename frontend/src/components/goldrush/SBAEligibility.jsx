@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, ArrowLeft, CheckCircle2, XCircle, AlertTriangle, ShieldCheck, TrendingUp, FileText, Target, Clock, DollarSign } from 'lucide-react';
+import { ArrowRight, ArrowLeft, CheckCircle2, XCircle, AlertTriangle, ShieldCheck, TrendingUp, FileText, Target, Clock, DollarSign, Calendar } from 'lucide-react';
+import BookingFlow from './BookingFlow';
 
 const questions = [
   {
@@ -115,6 +116,7 @@ const SBAEligibility = ({ onBack, onContactClick }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showReport, setShowReport] = useState(false);
+  const [showBooking, setShowBooking] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -142,6 +144,20 @@ const SBAEligibility = ({ onBack, onContactClick }) => {
   const progress = ((currentStep + 1) / questions.length) * 100;
   const currentQ = questions[currentStep];
   const canProceed = answers[currentQ?.id] !== undefined;
+
+  if (showBooking) {
+    return (
+      <BookingFlow
+        answers={answers}
+        report={getReport(totalScore, answers)}
+        onBack={() => setShowBooking(false)}
+        onSkip={() => {
+          setShowBooking(false);
+          setShowReport(true);
+        }}
+      />
+    );
+  }
 
   if (showReport) {
     const ReportIcon = report.icon;
@@ -265,6 +281,14 @@ const SBAEligibility = ({ onBack, onContactClick }) => {
               <h3 className="text-3xl font-serif font-bold text-navy-900 mb-4">Ready to take the next step?</h3>
               <p className="text-gray-600 mb-8 max-w-lg mx-auto">Get a personalized funding consultation with one of our experts. No obligation, no credit impact.</p>
               <div className="flex flex-wrap justify-center gap-4">
+                <button
+                  onClick={() => setShowBooking(true)}
+                  className="bg-pink-500 text-white px-8 py-3.5 rounded-full font-bold hover:bg-navy-900 transition-all duration-300 flex items-center gap-2 group shadow-lg"
+                >
+                  <Calendar size={18} />
+                  Book a Meeting
+                  <ArrowRight size={18} className="text-white group-hover:text-pink-500 transition-colors" />
+                </button>
                 <button
                   onClick={onContactClick}
                   className="bg-navy-900 text-white px-8 py-3.5 rounded-full font-bold hover:bg-pink-500 transition-all duration-300 flex items-center gap-2 group shadow-lg"

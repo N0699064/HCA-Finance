@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Phone, Building2, ArrowRight, ArrowLeft, User, Landmark, TrendingUp, Mail, PhoneCall, CheckCircle2 } from 'lucide-react';
+import BookingFlow from './BookingFlow';
 
 const steps = [
   { id: 'name', label: 'Name', icon: User },
@@ -24,6 +25,13 @@ const ContactPage = ({ onBack }) => {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [showBooking, setShowBooking] = useState(false);
+  const [mockReport, setMockReport] = useState({
+    pct: 65,
+    level: 'Moderate',
+    color: 'text-amber-500',
+    headline: 'You have moderate funding eligibility'
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -33,60 +41,18 @@ const ContactPage = ({ onBack }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const generateCalendarEvent = () => {
-    const eventDate = new Date();
-    eventDate.setDate(eventDate.getDate() + 1); // Schedule for next day
-    const startTime = new Date(eventDate.setHours(10, 0, 0, 0));
-    const endTime = new Date(startTime.getTime() + 30 * 60000); // 30 minutes duration
-
-    const formatDate = (date) => {
-      const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, '0');
-      const day = String(date.getDate()).padStart(2, '0');
-      const hours = String(date.getHours()).padStart(2, '0');
-      const minutes = String(date.getMinutes()).padStart(2, '0');
-      const seconds = String(date.getSeconds()).padStart(2, '0');
-      return `${year}${month}${day}T${hours}${minutes}${seconds}`;
-    };
-
-    const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//HCA Finance//Calendar Event//EN
-CALSCALE:GREGORIAN
-BEGIN:VEVENT
-UID:${Date.now()}@hcafinance.org
-DTSTAMP:${formatDate(new Date())}
-DTSTART:${formatDate(startTime)}
-DTEND:${formatDate(endTime)}
-SUMMARY:HCA Finance Funding Consultation - ${formData.firstName} ${formData.lastName}
-DESCRIPTION:Funding consultation with ${formData.companyName}\\nPhone: ${formData.phone}\\nEmail: ${formData.email}
-ORGANIZER:CN=HCA Finance;EMAIL=info@hcafinance.org
-ATTENDEE:CN=${formData.firstName} ${formData.lastName};EMAIL=${formData.email};RSVP=TRUE
-LOCATION:Virtual Meeting
-STATUS:CONFIRMED
-END:VEVENT
-END:VCALENDAR`;
-
-    // Download calendar file for user
-    const element = document.createElement('a');
-    element.setAttribute('href', 'data:text/calendar;charset=utf-8,' + encodeURIComponent(icsContent));
-    element.setAttribute('download', `HCA_Finance_Consultation_${formData.firstName}_${formData.lastName}.ics`);
-    element.style.display = 'none';
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
-
-    // Send calendar event to info@hcafinance.org via email
-    const mailtoLink = `mailto:info@hcafinance.org?subject=${encodeURIComponent(`New Funding Application - ${formData.firstName} ${formData.lastName}`)}&body=${encodeURIComponent(`New application received:\n\nName: ${formData.firstName} ${formData.lastName}\nCompany: ${formData.companyName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nFunding Amount: ${formData.fundingAmount || 'Not specified'}`)}`;
-    window.location.href = mailtoLink;
+  const handleSubmitToBooking = () => {
+    // Pass form data to BookingFlow
+    // The booking flow will now handle the calendar integration
+    setShowBooking(true);
+    window.scrollTo(0, 0);
   };
 
   const handleNext = () => {
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {
-      generateCalendarEvent();
-      setSubmitted(true);
+      handleSubmitToBooking();
     }
   };
 
@@ -273,6 +239,29 @@ END:VCALENDAR`;
         return null;
     }
   };
+
+  if (showBooking) {
+    return (
+      <BookingFlow
+        answers={{
+          years: formData.yearsInBusiness,
+          revenue: formData.annualRevenue,
+          credit: formData.creditScore,
+        }}
+        report={mockReport}
+        onBack={() => setShowBooking(false)}
+        onSkip={() => setShowBooking(false)}
+        preFillData={{
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          businessName: formData.companyName,
+          businessIndustry: '',
+        }}
+      />
+    );
+  }
 
   if (submitted) {
     return (
