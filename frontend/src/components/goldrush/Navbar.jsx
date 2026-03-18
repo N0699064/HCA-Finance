@@ -55,12 +55,12 @@ const Navbar = () => {
         {/* Logo */}
         <div
           className="flex items-center gap-2 cursor-pointer z-[110]"
-          onClick={() => handleMobileNav('', 'home')}
+          onClick={() => handleMobileNav('/')}
         >
           <img src={isHome || mobileMenuOpen ? "/logohca-white.svg" : "/logohca.svg"} alt="HCA Finance" className="h-10" />
         </div>
 
-        {/* Desktop Menu navigate('/
+        {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-12 font-medium">
           <div className="flex items-center space-x-10">
             <div className="group relative cursor-pointer flex items-center gap-1.5 hover:text-pink-500 transition-colors py-2 text-[15px] tracking-wide">
@@ -117,12 +117,12 @@ const Navbar = () => {
             </button>
             <div className={`overflow-hidden transition-all duration-300 ${expandedSection === 'services' ? 'max-h-[400px] mb-4' : 'max-h-0'}`}>
               <div className="bg-navy-800/50 rounded-2xl p-2 space-y-1">
-                <button onClick={() => handleMobileNav('lines-of-credit', 'service')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Lines of Credit</button>
-                <button onClick={() => handleMobileNav('bank-term-loans', 'service')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Bank Term Loans</button>
-                <button onClick={() => handleMobileNav('debt-restructuring', 'service')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Debt Restructuring</button>
-                <button onClick={() => handleMobileNav('sba-loans', 'service')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">SBA Loans</button>
-                <button onClick={() => handleMobileNav('equipment-financing', 'service')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Equipment Financing</button>
-                <button onClick={() => handleMobileNav('smarter-mca', 'service')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Smarter MCA Solution</button>
+                <button onClick={() => handleMobileNav('/services/lines-of-credit')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Lines of Credit</button>
+                <button onClick={() => handleMobileNav('/services/bank-term-loans')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Bank Term Loans</button>
+                <button onClick={() => handleMobileNav('/services/debt-restructuring')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Debt Restructuring</button>
+                <button onClick={() => handleMobileNav('/services/sba-loans')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">SBA Loans</button>
+                <button onClick={() => handleMobileNav('/services/equipment-financing')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Equipment Financing</button>
+                <button onClick={() => handleMobileNav('/services/smarter-mca')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">Smarter MCA Solution</button>
               </div>
             </div>
           </div>
