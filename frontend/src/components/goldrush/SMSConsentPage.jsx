@@ -336,6 +336,9 @@ const SMSConsentPage = () => {
               <p className="text-gray-600">HCA Finance is fully compliant with the Telephone Consumer Protection Act (TCPA). We only send SMS messages to numbers that have explicitly opted in, and we maintain a "Do Not Call" list. Contact us with any compliance concerns.</p>
             </div>
           </div>
+          <p className="text-center text-gray-400 text-xs mt-8">
+            <button onClick={() => navigate('/sms-screenshot')} className="text-gray-400 hover:text-gray-600 underline transition-colors">See opt-in example</button>
+          </p>
         </div>
 
         {/* Contact Section */}

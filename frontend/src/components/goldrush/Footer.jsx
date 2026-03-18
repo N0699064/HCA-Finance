@@ -33,12 +33,12 @@ const Footer = () => {
         <div>
           <h4 className="text-xl font-medium mb-6">Funding Solutions</h4>
           <ul className="space-y-3 text-gray-400 text-sm">
-            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Lines of Credit</span></li>
-            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Bank Term Loans</span></li>
-            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Debt Restructuring</span></li>
-            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">SBA Loans</span></li>
-            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Equipment Financing</span></li>
-            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Smarter MCA Solution</span></li>
+            <li><span onClick={() => navigate('/services/lines-of-credit')} className="hover:text-pink-500 transition-colors cursor-pointer">Lines of Credit</span></li>
+            <li><span onClick={() => navigate('/services/bank-term-loans')} className="hover:text-pink-500 transition-colors cursor-pointer">Bank Term Loans</span></li>
+            <li><span onClick={() => navigate('/services/debt-restructuring')} className="hover:text-pink-500 transition-colors cursor-pointer">Debt Restructuring</span></li>
+            <li><span onClick={() => navigate('/services/sba-loans')} className="hover:text-pink-500 transition-colors cursor-pointer">SBA Loans</span></li>
+            <li><span onClick={() => navigate('/services/equipment-financing')} className="hover:text-pink-500 transition-colors cursor-pointer">Equipment Financing</span></li>
+            <li><span onClick={() => navigate('/services/smarter-mca')} className="hover:text-pink-500 transition-colors cursor-pointer">Smarter MCA Solution</span></li>
           </ul>
         </div>
 
@@ -49,7 +49,7 @@ const Footer = () => {
             <li><span onClick={() => navigate('/privacy')} className="hover:text-pink-500 transition-colors cursor-pointer">Privacy policy</span></li>
             <li><span onClick={() => navigate('/terms')} className="hover:text-pink-500 transition-colors cursor-pointer">Terms and Conditions</span></li>
             <li><span onClick={() => navigate('/sms-consent')} className="hover:text-pink-500 transition-colors cursor-pointer">SMS Consent</span></li>
-            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Apply Now</span></li>
+            <li><span onClick={() => navigate('/contact')} className="hover:text-pink-500 transition-colors cursor-pointer">Apply Now</span></li>
             <li><a href="tel:+13313332159" className="hover:text-pink-500 transition-colors">+1 331 333 2159</a></li>
             <li><a href="mailto:info@hcafinance.org" className="hover:text-pink-500 transition-colors">info@hcafinance.org</a></li>
           </ul>

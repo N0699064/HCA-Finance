@@ -17,6 +17,7 @@ import SBAEligibility from "./components/goldrush/SBAEligibility";
 import TermsPage from "./components/goldrush/TermsPage";
 import PrivacyPage from "./components/goldrush/PrivacyPage";
 import SMSConsentPage from "./components/goldrush/SMSConsentPage";
+import SMSScreenshotPage from "./components/goldrush/SMSScreenshotPage";
 import { serviceData, insightData } from "./data/mockData";
 
 // Home Page Component
@@ -50,6 +51,7 @@ function App() {
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/sms-consent" element={<SMSConsentPage />} />
+          <Route path="/sms-screenshot" element={<SMSScreenshotPage />} />
         </Routes>
 
         <Footer />
