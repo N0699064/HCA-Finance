@@ -45,6 +45,7 @@ function App() {
           <Route path="/insights" element={<InsightsPage insightData={insightData} />} />
           <Route path="/insights/:id" element={<InsightDetail insightData={insightData} />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/apply" element={<ContactPage />} />
           <Route path="/sba-eligibility" element={<SBAEligibility />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
