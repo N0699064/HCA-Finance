@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/goldrush/Navbar";
 import Hero from "./components/goldrush/Hero";
 import Services from "./components/goldrush/Services";
@@ -13,118 +14,44 @@ import InsightDetail from "./components/goldrush/InsightDetail";
 import InsightsPage from "./components/goldrush/InsightsPage";
 import ContactPage from "./components/goldrush/ContactPage";
 import SBAEligibility from "./components/goldrush/SBAEligibility";
+import TermsPage from "./components/goldrush/TermsPage";
+import PrivacyPage from "./components/goldrush/PrivacyPage";
 import { serviceData, insightData } from "./data/mockData";
 
-function App() {
-  const [currentView, setCurrentView] = useState({ type: "home" });
-
-  const navigateToService = (id) => {
-    setCurrentView({ type: "service", id });
-    window.scrollTo(0, 0);
-  };
-
-  const navigateToInsight = (id) => {
-    setCurrentView({ type: "insight", id });
-    window.scrollTo(0, 0);
-  };
-
-  const navigateToInsightsList = () => {
-    setCurrentView({ type: "insights-list" });
-    window.scrollTo(0, 0);
-  };
-
-  const navigateToAbout = () => {
-    setCurrentView({ type: "about" });
-    window.scrollTo(0, 0);
-  };
-
-  const navigateToContact = () => {
-    setCurrentView({ type: "contact" });
-    window.scrollTo(0, 0);
-  };
-
-  const navigateToSbaEligibility = () => {
-    setCurrentView({ type: "sba-eligibility" });
-    window.scrollTo(0, 0);
-  };
-
-  const navigateHome = () => {
-    setCurrentView({ type: "home" });
-    window.scrollTo(0, 0);
-  };
-
+// Home Page Component
+function HomePage() {
   return (
-    <div className="antialiased text-slate-800 bg-white selection:bg-pink-200 selection:text-pink-900">
-      <Navbar
-        isHome={currentView.type === "home"}
-        onHome={navigateHome}
-        onServiceClick={navigateToService}
-        onAboutClick={navigateToAbout}
-        onInsightsClick={navigateToInsightsList}
-        onContactClick={navigateToContact}
-        onSbaEligibility={navigateToSbaEligibility}
-      />
+    <>
+      <Hero />
+      <Services />
+      <Partners />
+      <About />
+      <Insights />
+    </>
+  );
+}
 
-      {currentView.type === "home" && (
-        <>
-          <Hero
-            onContactClick={navigateToContact}
-            onAboutClick={navigateToAbout}
-          />
-          <Services onServiceClick={navigateToService} />
-          <Partners />
-          <About onAboutClick={navigateToAbout} />
-          <Insights
-            onInsightClick={navigateToInsight}
-            onSeeMore={navigateToInsightsList}
-          />
-        </>
-      )}
+function App() {
+  return (
+    <Router>
+      <div className="antialiased text-slate-800 bg-white selection:bg-pink-200 selection:text-pink-900">
+        <Navbar />
+        
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services/:id" element={<ServiceDetail serviceData={serviceData} />} />
+          <Route path="/insights" element={<InsightsPage insightData={insightData} />} />
+          <Route path="/insights/:id" element={<InsightDetail insightData={insightData} />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/sba-eligibility" element={<SBAEligibility />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+        </Routes>
 
-      {currentView.type === "about" && (
-        <AboutPage
-          onBack={navigateHome}
-          onContactClick={navigateToContact}
-        />
-      )}
-
-      {currentView.type === "service" && (
-        <ServiceDetail
-          data={serviceData[currentView.id] || serviceData["lines-of-credit"]}
-          onBack={navigateHome}
-          onContactClick={navigateToContact}
-        />
-      )}
-
-      {currentView.type === "insight" && (
-        <InsightDetail
-          data={insightData[currentView.id] || insightData["restaurant-expansion"]}
-          onBack={navigateToInsightsList}
-          onContactClick={navigateToContact}
-        />
-      )}
-
-      {currentView.type === "insights-list" && (
-        <InsightsPage
-          insights={Object.values(insightData)}
-          onInsightClick={navigateToInsight}
-          onBack={navigateHome}
-        />
-      )}
-
-      {currentView.type === "contact" && (
-        <ContactPage onBack={navigateHome} />
-      )}
-
-      {currentView.type === "sba-eligibility" && (
-        <SBAEligibility
-          onBack={navigateHome}
-          onContactClick={navigateToContact}
-        />
-      )}
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

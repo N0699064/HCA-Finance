@@ -1,7 +1,10 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-const About = ({ onAboutClick }) => {
+const About = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-white py-24 relative">
       <div className="container mx-auto px-6 flex">
@@ -30,7 +33,7 @@ const About = ({ onAboutClick }) => {
           </p>
 
           <button
-            onClick={onAboutClick}
+            onClick={() => navigate('/about')}
             className="bg-navy-900 text-white px-8 py-3.5 rounded-full font-bold hover:bg-pink-500 transition-all duration-300 flex items-center gap-2 group shadow-lg"
           >
             Learn more about us

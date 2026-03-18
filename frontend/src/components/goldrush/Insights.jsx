@@ -1,8 +1,11 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { insights } from '../../data/mockData';
 
-const Insights = ({ onInsightClick, onSeeMore }) => {
+const Insights = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-gray-100 py-16 md:py-24" id="insights">
       <div className="container mx-auto px-6">
@@ -11,7 +14,7 @@ const Insights = ({ onInsightClick, onSeeMore }) => {
             Success Stories
           </h2>
           <button
-            onClick={onSeeMore}
+            onClick={() => navigate('/insights')}
             className="flex items-center gap-2 text-navy-900 font-bold hover:text-pink-500 transition-colors text-sm md:text-base mb-1"
           >
             See all stories <ArrowRight size={16} className="text-pink-500" />
@@ -23,7 +26,7 @@ const Insights = ({ onInsightClick, onSeeMore }) => {
             <div
               key={index}
               className="group cursor-pointer flex flex-col h-full"
-              onClick={() => onInsightClick(item.id)}
+              onClick={() => navigate(`/insights/${item.id}`)}
             >
               {/* Image Container */}
               <div className="overflow-hidden rounded-2xl mb-4 shadow-sm bg-white aspect-[4/3]">

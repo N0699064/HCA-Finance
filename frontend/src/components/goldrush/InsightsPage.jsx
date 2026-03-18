@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
 import { ArrowRight, Calendar } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-const InsightsPage = ({ insights, onInsightClick, onBack }) => {
+const InsightsPage = ({ insightData }) => {
+  const navigate = useNavigate();
+  const insights = Object.values(insightData);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -40,7 +44,7 @@ const InsightsPage = ({ insights, onInsightClick, onBack }) => {
               <div
                 key={item.id}
                 className="group cursor-pointer flex flex-col h-full"
-                onClick={() => onInsightClick(item.id)}
+                onClick={() => navigate(`/insights/${item.id}`)}
               >
                 <div className="overflow-hidden rounded-[32px] mb-6 shadow-sm bg-white aspect-[4/3] relative">
                   <img
@@ -75,7 +79,7 @@ const InsightsPage = ({ insights, onInsightClick, onBack }) => {
           </div>
 
           <div className="mt-24 border-t border-gray-100 pt-12 flex justify-center">
-            <button onClick={onBack} className="text-navy-900 font-bold flex items-center gap-2 hover:text-pink-500 transition-colors">
+            <button onClick={() => navigate('/')} className="text-navy-900 font-bold flex items-center gap-2 hover:text-pink-500 transition-colors">
               <ArrowRight size={20} className="rotate-180" /> Back to home
             </button>
           </div>

@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { ArrowRight, Users, MessageSquare, Play } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-const AboutPage = ({ onBack, onContactClick }) => {
+const AboutPage = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -27,7 +30,7 @@ const AboutPage = ({ onBack, onContactClick }) => {
               We are specialists in business capital funding, helping small and medium enterprises access affordable bank financing, SBA loans, and working capital solutions with integrity and transparency.
             </p>
             <button
-              onClick={onContactClick}
+              onClick={() => navigate('/contact')}
               className="bg-navy-900 text-white px-8 py-3.5 rounded-full font-bold hover:bg-pink-500 transition-all duration-300 flex items-center gap-2 group shadow-lg"
             >
               Apply Now
@@ -151,7 +154,7 @@ const AboutPage = ({ onBack, onContactClick }) => {
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
               <p>Whether you need working capital, equipment financing, or help restructuring existing debt, HCA Finance is here to provide the funding solutions your business deserves.</p>
               <button
-                onClick={onContactClick}
+                onClick={() => navigate('/contact')}
                 className="bg-navy-900 text-white px-8 py-3.5 rounded-full font-bold hover:bg-pink-500 transition-all duration-300 flex items-center gap-2 group shadow-lg"
               >
                 Get started today
@@ -164,7 +167,7 @@ const AboutPage = ({ onBack, onContactClick }) => {
 
       {/* Back Button */}
       <div className="container mx-auto px-6 mb-24">
-        <button onClick={onBack} className="text-pink-500 font-bold flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
+        <button onClick={() => navigate('/')} className="text-pink-500 font-bold flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
           <ArrowRight size={20} className="rotate-180" /> Back to home
         </button>
       </div>

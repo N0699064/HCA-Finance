@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, ArrowRight, ChevronUp } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-const Navbar = ({ isHome, onHome, onServiceClick, onAboutClick, onInsightsClick, onContactClick, onSbaEligibility }) => {
+const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isHome = location.pathname === '/';
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedSection, setExpandedSection] = useState(null);
@@ -26,15 +30,10 @@ const Navbar = ({ isHome, onHome, onServiceClick, onAboutClick, onInsightsClick,
     setExpandedSection(expandedSection === section ? null : section);
   };
 
-  const handleMobileNav = (id, type) => {
+  const handleMobileNav = (path) => {
     setMobileMenuOpen(false);
     setExpandedSection(null);
-    if (type === 'service') onServiceClick(id);
-    if (type === 'about') onAboutClick();
-    if (type === 'home') onHome();
-    if (type === 'insights') onInsightsClick();
-    if (type === 'contact') onContactClick();
-    if (type === 'sba') onSbaEligibility();
+    navigate(path);
   };
 
   const navBgClass = mobileMenuOpen
@@ -61,34 +60,34 @@ const Navbar = ({ isHome, onHome, onServiceClick, onAboutClick, onInsightsClick,
           <img src={isHome || mobileMenuOpen ? "/logohca-white.svg" : "/logohca.svg"} alt="HCA Finance" className="h-10" />
         </div>
 
-        {/* Desktop Menu */}
+        {/* Desktop Menu navigate('/
         <div className="hidden lg:flex items-center space-x-12 font-medium">
           <div className="flex items-center space-x-10">
             <div className="group relative cursor-pointer flex items-center gap-1.5 hover:text-pink-500 transition-colors py-2 text-[15px] tracking-wide">
               Funding Solutions <ChevronDown size={14} className="text-pink-500 mt-0.5" />
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white text-navy-900 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 p-3">
-                <button onClick={() => onServiceClick('lines-of-credit')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Lines of Credit</button>
-                <button onClick={() => onServiceClick('bank-term-loans')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Bank Term Loans</button>
-                <button onClick={() => onServiceClick('debt-restructuring')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Debt Restructuring</button>
-                <button onClick={() => onServiceClick('sba-loans')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">SBA Loans</button>
-                <button onClick={() => onServiceClick('equipment-financing')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Equipment Financing</button>
-                <button onClick={() => onServiceClick('smarter-mca')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Smarter MCA Solution</button>
+                <button onClick={() => navigate('/services/lines-of-credit')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Lines of Credit</button>
+                <button onClick={() => navigate('/services/bank-term-loans')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Bank Term Loans</button>
+                <button onClick={() => navigate('/services/debt-restructuring')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Debt Restructuring</button>
+                <button onClick={() => navigate('/services/sba-loans')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">SBA Loans</button>
+                <button onClick={() => navigate('/services/equipment-financing')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Equipment Financing</button>
+                <button onClick={() => navigate('/services/smarter-mca')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">Smarter MCA Solution</button>
               </div>
             </div>
 
             <div className="group relative cursor-pointer flex items-center gap-1.5 hover:text-pink-500 transition-colors py-2 text-[15px] tracking-wide">
               Company <ChevronDown size={14} className="text-pink-500 mt-0.5" />
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white text-navy-900 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 p-3">
-                <button onClick={onAboutClick} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">About Us</button>
+                <button onClick={() => navigate('/about')} className="w-full text-left block px-5 py-3 hover:bg-gray-50 hover:text-pink-500 rounded-lg transition-colors text-[14px]">About Us</button>
               </div>
             </div>
 
-            <button onClick={onInsightsClick} className="hover:text-pink-500 transition-colors text-[15px] tracking-wide py-2">Success Stories</button>
-            <button onClick={onSbaEligibility} className="hover:text-pink-500 transition-colors text-[15px] tracking-wide py-2">SBA Eligibility</button>
+            <button onClick={() => navigate('/insights')} className="hover:text-pink-500 transition-colors text-[15px] tracking-wide py-2">Success Stories</button>
+            <button onClick={() => navigate('/sba-eligibility')} className="hover:text-pink-500 transition-colors text-[15px] tracking-wide py-2">SBA Eligibility</button>
           </div>
 
           <button
-            onClick={onContactClick}
+            onClick={() => navigate('/contact')}
             className={`px-8 py-3 rounded-full font-bold transition-all duration-300 flex items-center gap-2 group shadow-sm text-[15px] ${ctaButtonClass}`}
           >
             Apply Now
@@ -138,20 +137,20 @@ const Navbar = ({ isHome, onHome, onServiceClick, onAboutClick, onInsightsClick,
             </button>
             <div className={`overflow-hidden transition-all duration-300 ${expandedSection === 'company' ? 'max-h-[300px] mb-4' : 'max-h-0'}`}>
               <div className="bg-navy-800/50 rounded-2xl p-2 space-y-1">
-                <button onClick={() => handleMobileNav('', 'about')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">About Us</button>
+                <button onClick={() => handleMobileNav('/about')} className="w-full text-left px-6 py-4 text-gray-300 hover:text-white hover:bg-navy-800 rounded-xl transition-all">About Us</button>
               </div>
             </div>
           </div>
 
           <button
-            onClick={() => handleMobileNav('', 'insights')}
+            onClick={() => handleMobileNav('/insights')}
             className="w-full text-left py-6 text-xl font-bold text-white border-b border-navy-800 hover:text-pink-500 transition-colors"
           >
             Success Stories
           </button>
 
           <button
-            onClick={() => handleMobileNav('', 'sba')}
+            onClick={() => handleMobileNav('/sba-eligibility')}
             className="py-6 text-xl font-bold text-white border-b border-navy-800 hover:text-pink-500 transition-colors cursor-pointer block w-full text-left"
           >
             SBA Eligibility
@@ -159,7 +158,7 @@ const Navbar = ({ isHome, onHome, onServiceClick, onAboutClick, onInsightsClick,
 
           <div className="pt-10">
             <button
-              onClick={() => handleMobileNav('', 'contact')}
+              onClick={() => handleMobileNav('/contact')}
               className="w-full bg-white text-navy-900 py-6 rounded-full font-extrabold text-xl flex items-center justify-center gap-4 active:scale-95 transition-transform shadow-xl"
             >
               Apply Now

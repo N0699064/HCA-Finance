@@ -1,7 +1,10 @@
 import React from 'react';
 import { Linkedin, Twitter, Facebook } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="bg-navy-900 text-white pt-24 pb-12 border-t border-navy-800">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
@@ -43,7 +46,8 @@ const Footer = () => {
         <div>
           <h4 className="text-xl font-medium mb-6">Useful links</h4>
           <ul className="space-y-3 text-gray-400 text-sm">
-            <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Privacy policy</span></li>
+            <li><span onClick={() => navigate('/privacy')} className="hover:text-pink-500 transition-colors cursor-pointer">Privacy policy</span></li>
+            <li><span onClick={() => navigate('/terms')} className="hover:text-pink-500 transition-colors cursor-pointer">Terms and Conditions</span></li>
             <li><span className="hover:text-pink-500 transition-colors cursor-pointer">Apply Now</span></li>
             <li><a href="tel:+13313332159" className="hover:text-pink-500 transition-colors">+1 331 333 2159</a></li>
             <li><a href="mailto:info@hcafinance.org" className="hover:text-pink-500 transition-colors">info@hcafinance.org</a></li>

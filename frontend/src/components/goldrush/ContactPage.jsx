@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Phone, Building2, ArrowRight, ArrowLeft, User, Landmark, TrendingUp, Mail, PhoneCall, CheckCircle2 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import BookingFlow from './BookingFlow';
 
 const steps = [
@@ -10,7 +11,8 @@ const steps = [
   { id: 'phone', label: 'Phone', icon: PhoneCall },
 ];
 
-const ContactPage = ({ onBack }) => {
+const ContactPage = () => {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -284,7 +286,7 @@ const ContactPage = ({ onBack }) => {
                 Thank you, {formData.firstName}! Our funding specialists will review your information and reach out within 24 hours to discuss the best options for your business.
               </p>
               <button
-                onClick={onBack}
+                onClick={() => navigate('/')}
                 className="bg-navy-900 text-white px-8 py-3.5 rounded-full font-bold hover:bg-pink-500 transition-all duration-300 inline-flex items-center gap-2 group shadow-lg"
               >
                 Back to home
@@ -468,7 +470,7 @@ const ContactPage = ({ onBack }) => {
         </div>
 
         <div className="container mx-auto px-6 mt-16">
-          <button onClick={onBack} className="text-pink-500 font-bold flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
+          <button onClick={() => navigate('/')} className="text-pink-500 font-bold flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
             <ArrowRight size={20} className="rotate-180" /> Back to home
           </button>
         </div>

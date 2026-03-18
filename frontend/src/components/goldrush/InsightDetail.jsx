@@ -1,10 +1,15 @@
 import React, { useEffect } from 'react';
 import { ArrowRight, Calendar } from 'lucide-react';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const InsightDetail = ({ data, onBack, onContactClick }) => {
+const InsightDetail = ({ insightData }) => {
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const data = insightData[id] || insightData["restaurant-expansion"];
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [data.id]);
+  }, [id]);
 
   return (
     <div className="pt-20">
@@ -68,7 +73,7 @@ const InsightDetail = ({ data, onBack, onContactClick }) => {
 
             <div className="mt-20 flex flex-wrap gap-4 items-center">
               <button
-                onClick={onBack}
+                onClick={() => navigate('/insights')}
                 className="flex items-center gap-2 text-pink-500 font-bold hover:translate-x-[-4px] transition-transform"
               >
                 <ArrowRight size={20} className="rotate-180" /> Back to all stories
@@ -91,7 +96,7 @@ const InsightDetail = ({ data, onBack, onContactClick }) => {
             Ready to write your own success story?
           </h2>
           <button
-            onClick={onContactClick}
+            onClick={() => navigate('/contact')}
             className="bg-navy-900 text-white px-10 py-4 rounded-full font-bold hover:bg-pink-500 transition-all duration-300 inline-flex items-center gap-2 group shadow-lg"
           >
             Talk to a funding specialist

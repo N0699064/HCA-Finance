@@ -1,7 +1,10 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-const Hero = ({ onContactClick, onAboutClick }) => {
+const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative bg-navy-900 text-white min-h-screen flex items-center pt-20 pb-32 overflow-hidden">
       <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -16,14 +19,14 @@ const Hero = ({ onContactClick, onAboutClick }) => {
 
           <div className="flex flex-wrap gap-4">
             <button
-              onClick={onContactClick}
+              onClick={() => navigate('/contact')}
               className="bg-white text-navy-900 px-8 py-3.5 rounded-full font-bold hover:bg-pink-500 hover:text-white transition-all duration-300 flex items-center gap-2 group"
             >
               Get funded today
               <ArrowRight size={18} className="text-pink-500 group-hover:text-white transition-colors" />
             </button>
             <button
-              onClick={onAboutClick}
+              onClick={() => navigate('/about')}
               className="px-8 py-3.5 rounded-full font-bold border border-gray-500 hover:border-pink-500 hover:text-pink-500 transition-all duration-300 flex items-center gap-2"
             >
               About us

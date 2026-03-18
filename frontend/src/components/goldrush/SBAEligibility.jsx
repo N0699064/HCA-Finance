@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, ArrowLeft, CheckCircle2, XCircle, AlertTriangle, ShieldCheck, TrendingUp, FileText, Target, Clock, DollarSign, Calendar } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import BookingFlow from './BookingFlow';
 
 const questions = [
@@ -112,7 +113,8 @@ const getReport = (score, answers) => {
   return { score, maxScore, pct, level, color, icon, headline, summary, recommendations };
 };
 
-const SBAEligibility = ({ onBack, onContactClick }) => {
+const SBAEligibility = () => {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showReport, setShowReport] = useState(false);
@@ -290,7 +292,7 @@ const SBAEligibility = ({ onBack, onContactClick }) => {
                   <ArrowRight size={18} className="text-white group-hover:text-pink-500 transition-colors" />
                 </button>
                 <button
-                  onClick={onContactClick}
+                  onClick={() => navigate('/contact')}
                   className="bg-navy-900 text-white px-8 py-3.5 rounded-full font-bold hover:bg-pink-500 transition-all duration-300 flex items-center gap-2 group shadow-lg"
                 >
                   Talk to a specialist
@@ -306,7 +308,7 @@ const SBAEligibility = ({ onBack, onContactClick }) => {
             </div>
 
             <div className="mt-12">
-              <button onClick={onBack} className="text-pink-500 font-bold flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
+              <button onClick={() => navigate('/')} className="text-pink-500 font-bold flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
                 <ArrowRight size={20} className="rotate-180" /> Back to home
               </button>
             </div>
@@ -433,7 +435,7 @@ const SBAEligibility = ({ onBack, onContactClick }) => {
           </div>
 
           <div className="mt-12">
-            <button onClick={onBack} className="text-pink-500 font-bold flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
+            <button onClick={() => navigate('/')} className="text-pink-500 font-bold flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
               <ArrowRight size={20} className="rotate-180" /> Back to home
             </button>
           </div>

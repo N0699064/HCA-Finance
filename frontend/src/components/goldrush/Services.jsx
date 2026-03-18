@@ -1,8 +1,11 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { services } from '../../data/mockData';
 
-const Services = ({ onServiceClick }) => {
+const Services = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-white py-24 lg:py-32 relative">
       <div className="container mx-auto px-6 flex">
@@ -34,7 +37,7 @@ const Services = ({ onServiceClick }) => {
                 <div
                   key={index}
                   className="group cursor-pointer"
-                  onClick={() => onServiceClick(service.id)}
+                  onClick={() => navigate(`/services/${service.id}`)}
                 >
                   <div className={`w-20 h-20 rounded-2xl ${service.color} flex items-center justify-center mb-6 transform transition-transform group-hover:scale-110 duration-300`}>
                     <IconComponent size={40} strokeWidth={1.5} />

@@ -1,10 +1,15 @@
 import React, { useEffect } from 'react';
 import { ArrowRight, MessageSquare, Zap, Shield, Users, BarChart } from 'lucide-react';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const ServiceDetail = ({ data, onBack, onContactClick }) => {
+const ServiceDetail = ({ serviceData }) => {
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const data = serviceData[id] || serviceData["lines-of-credit"];
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [data.id]);
+  }, [id]);
 
   return (
     <div className="pt-20">
@@ -19,7 +24,7 @@ const ServiceDetail = ({ data, onBack, onContactClick }) => {
               {data.heroDescription}
             </p>
             <button
-              onClick={onContactClick}
+              onClick={() => navigate('/contact')}
               className="bg-navy-900 text-white px-8 py-3.5 rounded-full font-bold hover:bg-pink-500 transition-all duration-300 flex items-center gap-2 group shadow-lg"
             >
               Apply Now
@@ -177,7 +182,7 @@ const ServiceDetail = ({ data, onBack, onContactClick }) => {
 
       {/* Back Button */}
       <div className="container mx-auto px-6 mb-24">
-        <button onClick={onBack} className="text-pink-500 font-bold flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
+        <button onClick={() => navigate('/')} className="text-pink-500 font-bold flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
           <ArrowRight size={20} className="rotate-180" /> Back to all solutions
         </button>
       </div>
