@@ -266,7 +266,7 @@ const PrivacyPage = () => {
             <div className="space-y-2 mb-6">
               <p><strong>HCA Finance - Privacy Team</strong></p>
               <p>Email: <a href="mailto:info@hcafinance.org" className="text-pink-500 hover:text-pink-600">info@hcafinance.org</a></p>
-              <p>Phone: <a href="tel:+13313332159" className="text-pink-500 hover:text-pink-600">+1 331 333 2159</a></p>
+              <p>Phone: <a href="tel:+14703332822" className="text-pink-500 hover:text-pink-600">+1 470 333 2822</a></p>
               <p>Address: HCA Finance, Chicago, IL</p>
             </div>
             <p className="text-sm text-gray-600">

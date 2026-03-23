@@ -349,7 +349,7 @@ const SMSConsentPage = () => {
           </p>
           <div className="space-y-2">
             <p><strong>Email:</strong> <a href="mailto:privacy@hcafinance.org" className="text-pink-500 hover:text-pink-600">privacy@hcafinance.org</a></p>
-            <p><strong>Phone:</strong> <a href="tel:+13313332159" className="text-pink-500 hover:text-pink-600">+1 331 333 2159</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+14703332822" className="text-pink-500 hover:text-pink-600">+1 470 333 2822</a></p>
             <p><strong>Address:</strong> HCA Finance, Chicago, IL</p>
           </div>
         </div>

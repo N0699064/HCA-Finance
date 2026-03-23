@@ -50,7 +50,7 @@ const Footer = () => {
             <li><span onClick={() => navigate('/terms')} className="hover:text-pink-500 transition-colors cursor-pointer">Terms and Conditions</span></li>
             <li><span onClick={() => navigate('/sms-consent')} className="hover:text-pink-500 transition-colors cursor-pointer">SMS Consent</span></li>
             <li><span onClick={() => navigate('/contact')} className="hover:text-pink-500 transition-colors cursor-pointer">Apply Now</span></li>
-            <li><a href="tel:+13313332159" className="hover:text-pink-500 transition-colors">+1 331 333 2159</a></li>
+            <li><a href="tel:+14703332822" className="hover:text-pink-500 transition-colors">+1 470 333 2822</a></li>
             <li><a href="mailto:info@hcafinance.org" className="hover:text-pink-500 transition-colors">info@hcafinance.org</a></li>
           </ul>
         </div>

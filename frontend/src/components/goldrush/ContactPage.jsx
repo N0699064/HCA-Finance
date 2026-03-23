@@ -407,7 +407,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <p className="text-sm text-gray-500 font-medium mb-1">Call us</p>
-                      <a href="tel:+13313332159" className="text-lg font-medium text-navy-900 hover:text-pink-500 transition-colors">+1 331 333 2159</a>
+                      <a href="tel:+14703332822" className="text-lg font-medium text-navy-900 hover:text-pink-500 transition-colors">+1 470 333 2822</a>
                     </div>
                   </div>
 
@@ -431,7 +431,7 @@ const ContactPage = () => {
                   <div>
                     <h4 className="font-bold text-navy-900 mb-1">HCA Finance </h4>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      Florida<br />
+                      <br />
                       United States
                     </p>
                   </div>

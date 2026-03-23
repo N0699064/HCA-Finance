@@ -170,7 +170,7 @@ const TermsPage = () => {
             <div className="space-y-2">
               <p><strong>HCA Finance</strong></p>
               <p>Email: <a href="mailto:info@hcafinance.org" className="text-pink-500 hover:text-pink-600">info@hcafinance.org</a></p>
-              <p>Phone: <a href="tel:+13313332159" className="text-pink-500 hover:text-pink-600">+1 331 333 2159</a></p>
+              <p>Phone: <a href="tel:+14703332822" className="text-pink-500 hover:text-pink-600">+1 470 333 2822</a></p>
             </div>
           </section>
         </div>
