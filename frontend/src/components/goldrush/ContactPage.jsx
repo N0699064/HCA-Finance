@@ -139,7 +139,10 @@ const ContactPage = () => {
                   className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-white focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all outline-none text-navy-900 appearance-none"
                 >
                   <option value="">Select</option>
-                  <option value="<100k">Under $100,000</option>
+                  <option value="<30k">$30,000 and below</option>
+                  <option value="30k-40k">$30,000 – $40,000</option>
+                  <option value="40k-70k">$40,000 – $70,000</option>
+                  <option value="70k-100k">$70,000 – $100,000</option>
                   <option value="100k-250k">$100,000 – $250,000</option>
                   <option value="250k-500k">$250,000 – $500,000</option>
                   <option value="500k-1m">$500,000 – $1,000,000</option>
