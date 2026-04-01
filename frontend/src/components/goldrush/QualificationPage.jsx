@@ -232,10 +232,11 @@ const QualificationPage = () => {
   if (showBooking) {
     return (
       <BookingFlow
-        answers={{
-          years: formData.yearsInBusiness,
-          revenue: formData.annualRevenue,
-          credit: formData.creditScore,
+        qualificationData={{
+          yearsInBusiness: formData.yearsInBusiness,
+          annualRevenue: formData.annualRevenue,
+          creditScore: formData.creditScore,
+          fundingAmount: formData.fundingAmount,
         }}
         report={mockReport}
         onBack={() => setShowBooking(false)}

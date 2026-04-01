@@ -1,30 +1,53 @@
 import React, { useState } from 'react';
 import { ArrowRight, ArrowLeft, Calendar, CheckCircle2, Mail, Phone, Building2 } from 'lucide-react';
 
-const BookingFlow = ({ answers, report, onBack, onSkip, preFillData }) => {
+const BookingFlow = ({ qualificationData, report, onBack, onSkip, preFillData }) => {
   const [step, setStep] = useState('calendar'); // 'calendar' or 'confirmation'
   
-  const calendarLink = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0TCcJcIDgq9etkCvwhkUhCoUi8QK0xhOroRYUKCZgsrb7aJALWXOw2lzQfBK_grQXJF2BapJdN?tz=America/New_York';
+  // Build Calendly URL with qualification data
+  const getCalendlyUrl = () => {
+    const baseUrl = 'https://calendly.com/hcafinance-info/30min';
+    const params = new URLSearchParams();
+    
+    // Add contact info
+    if (preFillData?.firstName && preFillData?.lastName) {
+      params.append('name', `${preFillData.firstName} ${preFillData.lastName}`);
+    }
+    if (preFillData?.email) {
+      params.append('email', preFillData.email);
+    }
+    if (preFillData?.phone) {
+      params.append('phone_number', preFillData.phone);
+    }
+    
+    // Add business info and qualification data
+    let qualificationText = '';
+    if (preFillData?.businessName) {
+      qualificationText += `Company: ${preFillData.businessName}\n`;
+    }
+    if (qualificationData?.yearsInBusiness) {
+      qualificationText += `Years in Business: ${qualificationData.yearsInBusiness}\n`;
+    }
+    if (qualificationData?.annualRevenue) {
+      qualificationText += `Annual Revenue: ${qualificationData.annualRevenue}\n`;
+    }
+    if (qualificationData?.creditScore) {
+      qualificationText += `Credit Score: ${qualificationData.creditScore}\n`;
+    }
+    if (qualificationData?.fundingAmount) {
+      qualificationText += `Desired Funding: ${qualificationData.fundingAmount}`;
+    }
+    
+    if (qualificationText) {
+      params.append('a1', qualificationText);
+    }
+    
+    return `${baseUrl}?${params.toString()}`;
+  };
 
-  // Create appointment details string with all information
-  const appointmentDetails = `
-APPLICANT INFORMATION:
-Name: ${preFillData?.firstName} ${preFillData?.lastName}
-Company: ${preFillData?.businessName}
-Email: ${preFillData?.email}
-Phone: ${preFillData?.phone}
-
-APPLICATION DETAILS:
-Years in Business: ${answers?.years || 'Not specified'}
-Annual Revenue: ${answers?.revenue || 'Not specified'}
-Credit Score: ${answers?.credit || 'Not specified'}
-
-Please include all above information when booking your consultation.
-  `.trim();
-
-  const handleBookingComplete = () => {
-    setStep('confirmation');
-    window.scrollTo(0, 0);
+  // Redirect to Calendly with qualification data
+  const handleBookCalendar = () => {
+    window.location.href = getCalendlyUrl();
   };
 
   // Calendar Step - Full width calendar only
@@ -54,56 +77,66 @@ Please include all above information when booking your consultation.
             {/* Calendar Container */}
             <div className="max-w-5xl mx-auto">
               <div className="bg-[#F1F4F9] rounded-[32px] p-6 lg:p-8">
-                {/* Calendar Embedded */}
-                <div className="bg-white rounded-xl overflow-hidden shadow-md border-2 border-pink-100">
-                  <iframe
-                    src={calendarLink}
-                    style={{
-                      width: '100%',
-                      height: '600px',
-                      border: 'none',
-                      borderRadius: '8px'
-                    }}
-                    title="Schedule a Consultation"
-                  ></iframe>
-                </div>
-
-                {/* Instructions */}
-                <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-lg">
-                  <p className="text-sm font-bold text-blue-900 mb-2">📋 Appointment Details</p>
-                  <p className="text-xs text-blue-800">When booking, your contact information will be automatically associated with your appointment:</p>
-                  <div className="mt-3 text-xs text-blue-700 space-y-1 font-mono bg-white p-3 rounded max-h-40 overflow-y-auto">
-                    {appointmentDetails.split('\n').map((line, i) => (
-                      <div key={i}>{line}</div>
-                    ))}
+                {/* Qualification Summary */}
+                <div className="bg-white rounded-xl overflow-hidden shadow-md border-2 border-pink-100 p-6">
+                  <h3 className="font-bold text-navy-900 mb-4 text-lg">Your Qualification Summary</h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center py-2 border-b border-gray-200">
+                      <span className="text-gray-600 font-medium">Name</span>
+                      <span className="text-navy-900 font-bold">{preFillData?.firstName} {preFillData?.lastName}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2 border-b border-gray-200">
+                      <span className="text-gray-600 font-medium">Company</span>
+                      <span className="text-navy-900 font-bold">{preFillData?.businessName}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2 border-b border-gray-200">
+                      <span className="text-gray-600 font-medium">Email</span>
+                      <span className="text-navy-900 font-bold text-sm">{preFillData?.email}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2 border-b border-gray-200">
+                      <span className="text-gray-600 font-medium">Phone</span>
+                      <span className="text-navy-900 font-bold">{preFillData?.phone}</span>
+                    </div>
+                    {qualificationData?.yearsInBusiness && (
+                      <div className="flex justify-between items-center py-2 border-b border-gray-200">
+                        <span className="text-gray-600 font-medium">Years in Business</span>
+                        <span className="text-navy-900 font-bold">{qualificationData.yearsInBusiness}</span>
+                      </div>
+                    )}
+                    {qualificationData?.annualRevenue && (
+                      <div className="flex justify-between items-center py-2 border-b border-gray-200">
+                        <span className="text-gray-600 font-medium">Annual Revenue</span>
+                        <span className="text-navy-900 font-bold">{qualificationData.annualRevenue}</span>
+                      </div>
+                    )}
+                    {qualificationData?.creditScore && (
+                      <div className="flex justify-between items-center py-2 border-b border-gray-200">
+                        <span className="text-gray-600 font-medium">Credit Score</span>
+                        <span className="text-navy-900 font-bold">{qualificationData.creditScore}</span>
+                      </div>
+                    )}
+                    {qualificationData?.fundingAmount && (
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-gray-600 font-medium">Desired Funding</span>
+                        <span className="text-navy-900 font-bold">{qualificationData.fundingAmount}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
 
-                {/* Applicant Summary */}
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div className="bg-white p-4 rounded-lg">
-                    <p className="text-xs font-bold text-gray-500 uppercase mb-2">Name</p>
-                    <p className="text-sm font-bold text-navy-900">{preFillData?.firstName} {preFillData?.lastName}</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg">
-                    <p className="text-xs font-bold text-gray-500 uppercase mb-2">Company</p>
-                    <p className="text-sm font-bold text-navy-900">{preFillData?.businessName}</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg">
-                    <p className="text-xs font-bold text-gray-500 uppercase mb-2">Email</p>
-                    <p className="text-xs font-bold text-navy-900 break-all">{preFillData?.email}</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg">
-                    <p className="text-xs font-bold text-gray-500 uppercase mb-2">Phone</p>
-                    <p className="text-sm font-bold text-navy-900">{preFillData?.phone}</p>
-                  </div>
-                </div>
-
-                {/* CTA Note */}
-                <div className="mt-6 p-4 bg-amber-50 border-l-4 border-amber-500 rounded-lg">
-                  <p className="text-sm text-amber-900">
-                    <strong>After booking:</strong> You'll receive a confirmation email with meeting details. Our SBA specialists will review your information and contact you to confirm the appointment time.
+                {/* Booking Button */}
+                <div className="mt-6 p-4 bg-green-50 border-l-4 border-green-500 rounded-lg">
+                  <p className="text-sm text-green-900 mb-4">
+                    <strong>Ready to book?</strong> Click the button below to schedule your consultation on Calendly. All your qualification information will be included with your booking.
                   </p>
+                  <button
+                    onClick={handleBookCalendar}
+                    className="w-full bg-navy-900 text-white px-8 py-4 rounded-full font-bold hover:bg-pink-500 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg text-lg"
+                  >
+                    <Calendar size={20} />
+                    Book on Calendly
+                    <ArrowRight size={18} className="text-pink-500 group-hover:text-white" />
+                  </button>
                 </div>
               </div>
             </div>
