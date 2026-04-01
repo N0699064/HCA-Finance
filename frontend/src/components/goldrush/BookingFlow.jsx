@@ -4,7 +4,7 @@ import { ArrowRight, ArrowLeft, Calendar, CheckCircle2, Mail, Phone, Building2 }
 const BookingFlow = ({ answers, report, onBack, onSkip, preFillData }) => {
   const [step, setStep] = useState('calendar'); // 'calendar' or 'confirmation'
   
-  const calendarLink = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0TCcJcIDgq9etkCvwhkUhCoUi8QK0xhOroRYUKCZgsrb7aJALWXOw2lzQfBK_grQXJF2BapJdN';
+  const calendarLink = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0TCcJcIDgq9etkCvwhkUhCoUi8QK0xhOroRYUKCZgsrb7aJALWXOw2lzQfBK_grQXJF2BapJdN?tz=America/New_York';
 
   // Create appointment details string with all information
   const appointmentDetails = `
