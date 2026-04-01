@@ -126,7 +126,7 @@ const QualificationPage = () => {
                 </select>
               </div>
               <div className="space-y-2">
-                <label htmlFor="annualRevenue" className="block text-sm font-bold text-navy-900">Annual Revenue</label>
+                <label htmlFor="annualRevenue" className="block text-sm font-bold text-navy-900">Monthly Revenue</label>
                 <select
                   id="annualRevenue"
                   name="annualRevenue"
