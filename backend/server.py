@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field, ConfigDict
 from typing import List
 import uuid
 from datetime import datetime, timezone
+from agentgate import agentgate_middleware
 
 
 ROOT_DIR = Path(__file__).parent
@@ -15,6 +16,7 @@ load_dotenv(ROOT_DIR / '.env')
 
 # Create the main app without a prefix
 app = FastAPI()
+app.middleware("http")(agentgate_middleware)  # AgentGate: check each request
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
